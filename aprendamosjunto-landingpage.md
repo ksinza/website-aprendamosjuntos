@@ -1,49 +1,155 @@
-# Prompt: Landing Page "Aprendamos juntos"
+# Landing Page — Aprendamos Juntos
 
-Actúa como un desarrollador frontend experto en performance web y UI/UX.
-Utilizando tu skill `design-taste-frontend`, necesito que desarrolles una landing page ultra ligera, responsiva y optimizada para producción para un taller de tareas y refuerzo escolar llamado "Aprendamos juntos".
-El sitio se alojará en Firebase Hosting, por lo que el peso del archivo y la velocidad de carga son prioridades críticas.
-Requiero que todo el proyecto se estructure en un único archivo `index.html` autocontenido (o con un archivo `styles.css` mínimo separado), utilizando HTML5 semántico y Tailwind CSS (mediante su CDN optimizada o clases puras) para evitar bundles pesados de JavaScript.
+Documentación del estado actual del sitio web (`public/index.html`).
 
-## REQUISITOS DE RENDIMIENTO Y DISEÑO:
-1. **Cero imágenes pesadas:** Reemplaza cualquier necesidad de imágenes rasterizadas (PNG/JPG) por componentes visuales basados en CSS, degradados suaves, formas geométricas elegantes y bordes redondeados que emulen el estilo educativo, cálido e infantil del flyer.
-2. **Iconos integrados:** No utilices librerías externas de iconos (como FontAwesome). Genera todos los iconos de las tarjetas y redes sociales (WhatsApp, Facebook, TikTok) exclusivamente como código SVG inline y optimizado.
-3. **Diseño y Paleta de Colores Estricta:** El diseño debe transmitir confianza, crecimiento y alegría. Aplica exactamente esta paleta utilizando valores arbitrarios en Tailwind CSS (ej. `bg-[#87CEFA]`, `text-[#1E3A8A]`):
-   - **Colores Principales (Fondos, tarjetas y elementos visuales clave):** Azul Claro (`#87CEFA`), Verde Menta (`#98FF98`) y Amarillo Suave (`#FFFF99`). Alterna estos colores de manera armónica en las distintas secciones.
-   - **Colores Neutros (Lectura y estructura):** Utiliza Azul Marino (`#1E3A8A`) para todos los textos, títulos y subtítulos garantizando un contraste accesible; y Gris Claro (`#F1F1F1`) para fondos de secciones secundarias.
-   - **Color de Acento / CTA:** Utiliza Lima (`#66E880`) exclusivamente para resaltar las llamadas a la acción (como el botón principal de WhatsApp) y detalles interactivos.
+---
 
+## Datos del proyecto
 
+| Campo | Valor |
+|---|---|
+| Nombre del negocio | Aprendamos Juntos |
+| Tipo de negocio | Taller de refuerzo y nivelación escolar |
+| Archivo principal | `public/index.html` |
+| Hosting | Firebase Hosting (`public/` como raíz pública) |
+| Email de contacto | aprendiendojuntostallertareas@gmail.com |
+| WhatsApp | ⚠️ Placeholder `0000000000` — reemplazar con número real |
+| Facebook | https://www.facebook.com/share/1EigzRYmUD/ |
+| TikTok | https://www.tiktok.com/@aprendiendojuntostaller |
 
+---
 
-## ESTRUCTURA DE CONTENIDO:
+## Tecnología
 
-### 1. Hero Section:
-* **Título:** Refuerzo y Nivelación Escolar "Aprendamos juntos".
-* **Subtítulo:** "Acompañamos el aprendizaje de tus hijos con amor, paciencia y dedicación".
-* **CTA (Botón principal):** Un botón llamativo con efecto hover fluido que dirija a WhatsApp: "¡Contáctame para más información!".
+- **HTML5 semántico**, todo en un único archivo autocontenido (`index.html`)
+- **CSS custom** embebido en `<style>` — sin frameworks externos
+- **Google Fonts** (vía CDN): Fredoka, Nunito, Yellowtail
+- **Iconos:** SVG inline optimizados (sin librerías externas)
+- **JavaScript mínimo** inline: menú hamburguesa y animaciones de scroll reveal
+- Sin dependencias npm ni bundle de JS
 
-### 2. Sección de Servicios (¿Qué ofrecemos?):
-Diseño en cuadrícula de tarjetas (cards) limpias con sus respectivos iconos SVG:
-* **Nivelación en Lectura:** Fortalecemos la lectura comprensiva, fluidez y comprensión.
-* **Nivelación en Matemáticas:** Desarrollamos el pensamiento lógico, resolución de problemas y habilidades numéricas básicas.
-* **Refuerzo Escolar:** Apoyo en las diferentes áreas para mejorar el rendimiento académico.
-* **Acompañamiento en Tareas:** Acompañamos y guiamos en las tareas diarias para reforzar el aprendizaje.
+---
 
-### 3. Sección de Tarifas (Todo incluido en nuestros planes):
-Bloque de precios limpio y contrastante con dos opciones:
-* **Quincena Laboral** (10 días hábiles de clase): $100.000
-* **Mes Completo** (4 semanas laborales): $200.000
+## Sistema de diseño
 
-### 4. Sección de Beneficios / Valor Agregado:
-Viñetas estilizadas con SVGs de checkmarks:
-* Apoyo integral en el aprendizaje para que tus hijos puedan avanzar con confianza.
-* Atención personalizada en un ambiente de respeto, paciencia y motivación.
-* Comprometidos con el desarrollo académico y emocional de cada niño/a.
-* **Frase destacada:** "Enseñar es inspirar y acompañar para crecer."
+### Paleta de colores
 
-### 5. Footer:
-* **Frase:** "Aprender hoy, para un mejor mañana ❤️".
-* **Enlaces de redes sociales:** Iconos SVG de WhatsApp, Facebook y TikTok con transiciones suaves.
+| Variable CSS | Valor | Uso |
+|---|---|---|
+| `--cream` | `#FDF5F1` | Fondo general del cuerpo |
+| `--cream-card` | `#FFFDFC` | Fondo de tarjetas |
+| `--ink` | `#4a3a6b` | Texto principal |
+| `--ink-soft` | `#6f6189` | Texto secundario y descriptivo |
+| `--pink` | `#E5388B` | Color de acento / CTA principal |
+| `--pink-deep` | `#D11A75` | Hover de botones rosas |
+| `--pink-soft` | `#FAD4E5` | Fondos suaves rosas |
+| `--purple` | `#6E4FB8` | Color institucional / pill headers |
+| `--purple-deep` | `#5a3da3` | Títulos y marca |
+| `--purple-soft` | `#E6DCF7` | Fondos suaves púrpura |
+| `--teal` | `#239B9B` | Lema hero / plan mensual |
+| `--teal-deep` | `#1c8585` | Hover teal |
+| `--teal-soft` | `#CFEBEB` | Fondo icono teal |
+| `--yellow` | `#F4C740` | Estrellas decorativas |
+| *(sin variable)* | `#FCE3D4` / `#C2410C` | Fondo y texto de tarjeta "Maquetas y Carteleras" (clase `.o`) |
 
-Entrégame el código completamente optimizado, minificable, con semántica HTML correcta y accesibilidad básica (atributos alt, aria-labels en los enlaces de redes sociales).
+### Tipografía
+
+| Fuente | Uso |
+|---|---|
+| **Fredoka** | Títulos (`h1`–`h4`), botones, nav brand, pill headers |
+| **Nunito** | Cuerpo de texto, descripciones |
+| **Yellowtail** | Display hero (`.l2`, `.l3` del `h1`) y frase de cierre |
+
+---
+
+## Estructura de secciones
+
+### 1. Nav (sticky)
+- Logo + nombre de marca "Aprendamos Juntos" con badge de corazón
+- Links internos: Servicios · Tarifas · Beneficios · Contacto
+- Iconos de Facebook y TikTok (escritorio, ocultos en < 560px)
+- Botón "Escríbeme" → `#contacto`
+- Menú hamburguesa responsive (visible en < 960px), animación 3 líneas → X
+
+### 2. Hero (`#inicio`)
+- Eyebrow: "Acompañamiento escolar"
+- Título en tres líneas: "Refuerzo y" / "Nivelación" / "Escolar"
+- Lema en fondo teal: "Acompañamos el aprendizaje de tus hijos con amor, paciencia y dedicación ♥"
+- CTAs: "Quiero más información" (pink, → `#contacto`) + "Ver tarifas" (ghost, → `#tarifas`)
+- Stickynote decorativa (amarilla, rotada -6°): "Enseñar es inspirar y acompañar para crecer"
+- Imagen: `assets/hero.webp` (600×480, `loading="eager"`)
+- Blob decorativo de fondo (degradado púrpura-rosa, oculto en móvil)
+
+### 3. Servicios (`#ofrecemos`)
+**5 tarjetas** en grid `repeat(5,1fr)` con íconos SVG inline de 104px:
+
+| Tarjeta | Clase | Color texto | Color fondo ico | Descripción |
+|---|---|---|---|---|
+| Nivelación en Lectura | `.p` | `--purple-deep` | `--purple-soft` | Fluidez y comprensión lectora |
+| Nivelación en Matemáticas | `.y` | `#92400E` | `#FEF3C7` | Pensamiento lógico y operaciones |
+| Refuerzo Escolar | `.k` | `--pink` | `--pink-soft` | Apoyo en todas las áreas |
+| Acompañamiento en Tareas | `.t` | `--teal-deep` | `--teal-soft` | Guía en las tareas diarias |
+| Maquetas y Carteleras | `.o` | `#C2410C` | `#FCE3D4` | Maquetas y carteleras para ferias y proyectos escolares |
+
+Banner inferior: "Todo incluido en nuestros planes ♥ ♥" (pill rosa)
+
+### 4. Tarifario (`#tarifas`)
+Dos planes en grid de dos columnas:
+
+| Plan | Clase | Precio | Duración |
+|---|---|---|---|
+| Quincena Laboral | `.q` (pink) | $100.000 / estudiante | 10 días hábiles |
+| Mes Completo | `.m` (teal) | $200.000 / estudiante | 4 semanas laborales |
+
+Incluye: nivelación en lectura, refuerzo en todas las áreas, acompañamiento en tareas diarias (quincena); + seguimiento del progreso y atención personalizada (mes).
+
+### 5. Beneficios (`#beneficios`)
+Tres tarjetas en grid `repeat(3,1fr)`:
+- **Apoyo integral** (ícono corazón rosa) — avance con confianza
+- **Atención personalizada** (ícono estrella amarilla) — respeto, paciencia y motivación
+- **Compromiso real** (ícono check teal) — desarrollo académico y emocional
+
+Frase de cierre (Yellowtail / rosa): "Aprender hoy, para un mejor mañana ♥"
+
+### 6. CTA Band (`#contacto`)
+- Fondo degradado `var(--purple)` → `var(--pink)`
+- Título: "¡Contáctame para más información!"
+- Botón WhatsApp (link con número ⚠️ placeholder)
+- Email clicable: `aprendiendojuntostallertareas@gmail.com`
+
+### 7. Footer
+- Logo + "Aprendamos Juntos" + enlaces de navegación + iconos FB y TikTok
+- Email con ícono de sobre
+- Copyright: "Refuerzo y Nivelación Escolar · Hecho con ♥ para acompañar a cada estudiante"
+
+---
+
+## Assets (`public/assets/`)
+
+| Archivo | Estado | Descripción |
+|---|---|---|
+| `hero.webp` | ✅ Presente | Foto de la docente (600×480) |
+| `favicon.svg` | ✅ Presente | Ícono SVG para navegadores modernos |
+| `favicon-32.png` | ✅ Presente | Favicon 32×32 px |
+| `apple-touch-icon.png` | ✅ Presente | Ícono Apple 180×180 px |
+| `icon-512.png` | ✅ Presente | Ícono PWA/manifest |
+| `og-image.jpg` | ❌ Faltante | Imagen Open Graph (1200×630 px) |
+
+---
+
+## Comportamientos interactivos
+
+- **Scroll reveal:** clase `.reveal` animada al hacer scroll (pure JS, sin librerías); fallback de 2.5 s que fuerza la visibilidad de todos los elementos
+- **Menú hamburguesa:** toggle de clase `.nav-open` en el `<header>`; cierra al hacer clic fuera o presionar Escape
+- **Floating WA button:** fijo en esquina inferior derecha; en hover desktop expande el label con animación; en móvil (< 560px) se reduce a círculo sin texto
+- **Floating social (mobile):** FB + TikTok como botones circulares apilados sobre el WA, visibles solo en < 560px
+- **Nav social (desktop):** iconos FB y TikTok en la barra nav, ocultos en < 560px
+
+---
+
+## Responsive breakpoints
+
+| Breakpoint | Cambios principales |
+|---|---|
+| `≤ 960px` | Hero en columna única · cards en `repeat(3,1fr)` · planes apilados · menú hamburguesa visible |
+| `≤ 560px` | Cards en `1fr` · padding reducido · WA float solo icono · nav social oculto · social flotante visible |

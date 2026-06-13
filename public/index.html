@@ -195,7 +195,7 @@
     margin-top:48px; border:2.5px dashed var(--purple-soft); border-radius:var(--r-lg);
     padding:54px 40px; background:rgba(255,255,255,.5);
   }
-  .cards4{ display:grid; grid-template-columns:repeat(4,1fr); gap:24px; }
+  .cards4{ display:grid; grid-template-columns:repeat(5,1fr); gap:20px; }
   .card{
     text-align:center; padding:8px 14px; position:relative;
   }
@@ -204,18 +204,20 @@
     background:linear-gradient(var(--purple-soft), transparent);
   }
   .ico{
-    width:118px; height:118px; border-radius:50%; margin:0 auto 22px; display:grid; place-items:center;
+    width:104px; height:104px; border-radius:50%; margin:0 auto 20px; display:grid; place-items:center;
   }
   .ico.p{ background:var(--purple-soft); }
   .ico.k{ background:var(--pink-soft); }
   .ico.t{ background:var(--teal-soft); }
   .ico.y{ background:#FEF3C7; }
-  .ico svg{ width:74px; height:74px; }
-  .card h3{ font-size:1.32rem; color:var(--purple-deep); text-transform:uppercase; letter-spacing:.02em; }
+  .ico.o{ background:#FCE3D4; }
+  .ico svg{ width:64px; height:64px; }
+  .card h3{ font-size:1.16rem; color:var(--purple-deep); text-transform:uppercase; letter-spacing:.01em; line-height:1.12; }
   .card.k h3{ color:var(--pink); }
   .card.t h3{ color:var(--teal-deep); }
   .card.y h3{ color:#92400E; }
-  .card p{ margin-top:12px; color:var(--ink-soft); font-weight:600; font-size:1.02rem; max-width:280px; margin-left:auto; margin-right:auto; }
+  .card.o h3{ color:#C2410C; }
+  .card p{ margin-top:12px; color:var(--ink-soft); font-weight:600; font-size:.96rem; max-width:280px; margin-left:auto; margin-right:auto; }
 
   .incluido{
     display:flex; align-items:center; justify-content:center; gap:12px; margin:42px auto 0;
@@ -376,7 +378,7 @@
     .hero-slot img{ object-position:center; }
     .art-blob{ display:none; }
     .stickynote{ left:-4px; right:auto; top:auto; bottom:14px; transform:rotate(-5deg); }
-    .cards4{ grid-template-columns:repeat(2,1fr); gap:28px; }
+    .cards4{ grid-template-columns:repeat(3,1fr); gap:26px; }
     .card + .card::before{ display:none; }
     .ben-grid{ grid-template-columns:1fr; }
     .tar-grid{ grid-template-columns:1fr; gap:46px; }
@@ -541,6 +543,23 @@
           </div>
           <h3>Acompañamiento<br>en Tareas</h3>
           <p>Acompañamos y guiamos en las tareas diarias para reforzar el aprendizaje.</p>
+        </div>
+
+        <div class="card o reveal d3">
+          <div class="ico o" aria-hidden="true">
+            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+              <rect x="11" y="12" width="42" height="31" rx="3" fill="#fff" stroke="#C2410C" stroke-width="2.6"/>
+              <path d="M17 19h22" stroke="#F59E6B" stroke-width="3" stroke-linecap="round"/>
+              <rect x="17" y="30" width="5" height="8" rx="1" fill="#E5388B"/>
+              <rect x="25" y="26" width="5" height="12" rx="1" fill="#6E4FB8"/>
+              <rect x="33" y="32" width="5" height="6" rx="1" fill="#239B9B"/>
+              <path d="M45 26.5l1.5 3.2 3.5.4-2.6 2.4.7 3.5-3.1-1.8-3.1 1.8.7-3.5-2.6-2.4 3.5-.4z" fill="#F4C740"/>
+              <path d="M21 43l-4 10M43 43l4 10" stroke="#C2410C" stroke-width="2.6" stroke-linecap="round"/>
+              <path d="M19 50h26" stroke="#C2410C" stroke-width="2.6" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Maquetas y<br>Carteleras</h3>
+          <p>Elaboramos maquetas y carteleras creativas para ferias, exposiciones y proyectos escolares.</p>
         </div>
 
       </div>
