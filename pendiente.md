@@ -96,9 +96,9 @@ Si se activa Analytics se recopilan datos. Recomendado agregar al menos una secc
 |---|---|---|---|
 | 1 | Número de WhatsApp real | 🔴 Alta | Pendiente |
 | 2 | Metaetiquetas SEO y Open Graph | 🟠 Media | Pendiente |
-| 3 | Imagen OG (`assets/og-image.jpg`) | 🟠 Media | Pendiente |
+| 3 | Imagen OG (`assets/og-image.jpg`) | 🟠 Media | ✅ Completado |
 | 4 | Headers de caché en `firebase.json` | 🟢 Baja | Pendiente |
-| 5 | Preload imagen hero | 🟢 Baja | Pendiente |
+| 5 | Preload imagen hero | 🟢 Baja | ✅ Completado |
 | 6 | Google Analytics / Firebase Analytics | 🟢 Baja | Pendiente |
 | 7 | Política de privacidad | 🟢 Baja | Pendiente |
 | — | Facebook y TikTok | — | ✅ Completado |
