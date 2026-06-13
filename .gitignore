@@ -1,0 +1,17 @@
+# Archivos de agentes de IA y Editores
+.claude/
+.claude.json
+.cursor/
+.vscode/
+.agents/
+skills-lock.json
+
+# Dependencias (por si en el futuro agregas package.json)
+node_modules/
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Variables de entorno
+.env

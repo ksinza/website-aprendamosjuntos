@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aprendamos Juntos — Refuerzo y Nivelación Escolar</title>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+<meta name="theme-color" content="#E5388B">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&family=Yellowtail&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:      #FDF5F1;
+    --cream-card: #FFFDFC;
+    --ink:        #4a3a6b;
+    --ink-soft:   #6f6189;
+    --pink:       #E5388B;
+    --pink-deep:  #D11A75;
+    --pink-soft:  #FAD4E5;
+    --pink-wash:  #FCE9F1;
+    --purple:     #6E4FB8;
+    --purple-deep:#5a3da3;
+    --purple-soft:#E6DCF7;
+    --teal:       #239B9B;
+    --teal-deep:  #1c8585;
+    --teal-soft:  #CFEBEB;
+    --yellow:     #F4C740;
+    --shadow-sm:  0 4px 14px rgba(110,79,184,.10);
+    --shadow-md:  0 14px 40px rgba(110,79,184,.16);
+    --shadow-pink:0 16px 40px rgba(229,56,139,.22);
+    --r-lg: 32px;
+    --r-md: 22px;
+    --r-sm: 16px;
+    --maxw: 1180px;
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html{ scroll-behavior:smooth; }
+  body{
+    font-family:'Nunito', sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4{ font-family:'Fredoka', sans-serif; font-weight:600; line-height:1.08; letter-spacing:-.01em; }
+  .script{ font-family:'Yellowtail', cursive; font-weight:400; letter-spacing:.01em; }
+  a{ color:inherit; text-decoration:none; }
+  img{ max-width:100%; display:block; }
+  .wrap{ width:100%; max-width:var(--maxw); margin:0 auto; padding:0 28px; }
+  section{ position:relative; }
+
+  /* decorative bits */
+  .heart, .star, .check{ display:inline-block; vertical-align:middle; background-color:currentColor; -webkit-mask-repeat:no-repeat; mask-repeat:no-repeat; -webkit-mask-position:center; mask-position:center; -webkit-mask-size:contain; mask-size:contain; }
+  .heart{ -webkit-mask-image:url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%3E%3Cpath%20d='M12%2021.35l-1.45-1.32C5.4%2015.36%202%2012.28%202%208.5%202%205.42%204.42%203%207.5%203c1.74%200%203.41.81%204.5%202.09C13.09%203.81%2014.76%203%2016.5%203%2019.58%203%2022%205.42%2022%208.5c0%203.78-3.4%206.86-8.55%2011.54L12%2021.35z'/%3E%3C/svg%3E"); mask-image:url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%3E%3Cpath%20d='M12%2021.35l-1.45-1.32C5.4%2015.36%202%2012.28%202%208.5%202%205.42%204.42%203%207.5%203c1.74%200%203.41.81%204.5%202.09C13.09%203.81%2014.76%203%2016.5%203%2019.58%203%2022%205.42%2022%208.5c0%203.78-3.4%206.86-8.55%2011.54L12%2021.35z'/%3E%3C/svg%3E"); }
+  .check{ -webkit-mask-image:url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%3E%3Cpath%20d='M20.3%205.7a1.5%201.5%200%200%201%200%202.1l-9.5%209.5a1.5%201.5%200%200%201-2.1%200l-4.5-4.5a1.5%201.5%200%201%201%202.1-2.1l3.45%203.45%208.45-8.45a1.5%201.5%200%200%201%202.1%200z'/%3E%3C/svg%3E"); mask-image:url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%3E%3Cpath%20d='M20.3%205.7a1.5%201.5%200%200%201%200%202.1l-9.5%209.5a1.5%201.5%200%200%201-2.1%200l-4.5-4.5a1.5%201.5%200%201%201%202.1-2.1l3.45%203.45%208.45-8.45a1.5%201.5%200%200%201%202.1%200z'/%3E%3C/svg%3E"); }
+  .star{ -webkit-mask-image:url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%3E%3Cpath%20d='M12%202.5l2.7%205.9%206.4.6c.8.1%201.1%201%20.5%201.6l-4.8%204.3%201.4%206.3c.2.8-.7%201.4-1.4%201l-5.5-3.3-5.5%203.3c-.7.4-1.6-.2-1.4-1l1.4-6.3-4.8-4.3c-.6-.6-.3-1.5.5-1.6l6.4-.6L12%202.5z'/%3E%3C/svg%3E"); mask-image:url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%3E%3Cpath%20d='M12%202.5l2.7%205.9%206.4.6c.8.1%201.1%201%20.5%201.6l-4.8%204.3%201.4%206.3c.2.8-.7%201.4-1.4%201l-5.5-3.3-5.5%203.3c-.7.4-1.6-.2-1.4-1l1.4-6.3-4.8-4.3c-.6-.6-.3-1.5.5-1.6l6.4-.6L12%202.5z'/%3E%3C/svg%3E"); }
+
+  /* ============ NAV ============ */
+  .nav{
+    position:sticky; top:0; z-index:60;
+    background:rgba(253,245,241,.82);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(110,79,184,.10);
+  }
+  .nav-inner{ display:flex; align-items:center; justify-content:space-between; height:74px; }
+  .brand{ display:flex; align-items:center; gap:11px; font-family:'Fredoka'; font-weight:600; font-size:1.22rem; color:var(--purple-deep); white-space:nowrap; }
+  .brand .badge{
+    width:40px; height:40px; border-radius:13px;
+    background:linear-gradient(140deg,var(--pink),var(--purple));
+    display:grid; place-items:center; box-shadow:var(--shadow-sm); flex:none;
+  }
+  .brand .badge .heart{ width:20px; height:20px; color:#fff; }
+  .nav-links{ display:flex; align-items:center; gap:34px; }
+  .nav-links a{ font-weight:700; font-size:.98rem; color:var(--ink-soft); transition:color .18s; }
+  .nav-links a:hover{ color:var(--pink); }
+  .btn{
+    font-family:'Fredoka'; font-weight:600; font-size:1rem;
+    border:none; cursor:pointer; display:inline-flex; align-items:center; gap:10px;
+    padding:13px 24px; border-radius:999px; transition:transform .18s, box-shadow .18s, background .18s;
+    white-space:nowrap;
+  }
+  .btn-wa{ background:#25D366; color:#fff; box-shadow:0 10px 24px rgba(37,211,102,.34); }
+  .btn-wa:hover{ transform:translateY(-2px); box-shadow:0 14px 30px rgba(37,211,102,.45); }
+  .btn-pink{ background:var(--pink); color:#fff; box-shadow:var(--shadow-pink); }
+  .btn-pink:hover{ transform:translateY(-2px); background:var(--pink-deep); }
+  .btn-ghost{ background:#fff; color:var(--purple-deep); box-shadow:var(--shadow-sm); }
+  .btn-ghost:hover{ transform:translateY(-2px); color:var(--pink); }
+  .wa-ico{ width:21px; height:21px; flex:none; display:inline-block; background-color:currentColor; -webkit-mask:url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Cpath%20d='M16%203C9%203%203.4%208.6%203.4%2015.6c0%202.4.7%204.7%201.9%206.7L3%2029l6.9-2.2c1.9%201%204%201.6%206.1%201.6%207%200%2012.6-5.6%2012.6-12.6S23%203%2016%203zm0%2022.8c-1.9%200-3.7-.5-5.3-1.5l-.4-.2-4.1%201.3%201.3-4-.2-.4c-1-1.6-1.6-3.5-1.6-5.5C5.4%209.8%2010.2%205%2016%205s10.6%204.8%2010.6%2010.6S21.8%2025.8%2016%2025.8zm5.8-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8%201-1%201.2-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.3-.2-.3%200-.5.1-.7.1-.1.3-.4.5-.6.1-.2.2-.3.3-.5.1-.2%200-.4%200-.6%200-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2%200-.5.1-.8.4-.3.3-1%201-1%202.5s1.1%202.9%201.2%203.1c.2.2%202.2%203.4%205.3%204.7.7.3%201.3.5%201.8.6.7.2%201.4.2%201.9.1.6-.1%201.9-.8%202.1-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z'/%3E%3C/svg%3E") center/contain no-repeat; mask:url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Cpath%20d='M16%203C9%203%203.4%208.6%203.4%2015.6c0%202.4.7%204.7%201.9%206.7L3%2029l6.9-2.2c1.9%201%204%201.6%206.1%201.6%207%200%2012.6-5.6%2012.6-12.6S23%203%2016%203zm0%2022.8c-1.9%200-3.7-.5-5.3-1.5l-.4-.2-4.1%201.3%201.3-4-.2-.4c-1-1.6-1.6-3.5-1.6-5.5C5.4%209.8%2010.2%205%2016%205s10.6%204.8%2010.6%2010.6S21.8%2025.8%2016%2025.8zm5.8-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8%201-1%201.2-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.3-.2-.3%200-.5.1-.7.1-.1.3-.4.5-.6.1-.2.2-.3.3-.5.1-.2%200-.4%200-.6%200-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2%200-.5.1-.8.4-.3.3-1%201-1%202.5s1.1%202.9%201.2%203.1c.2.2%202.2%203.4%205.3%204.7.7.3%201.3.5%201.8.6.7.2%201.4.2%201.9.1.6-.1%201.9-.8%202.1-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z'/%3E%3C/svg%3E") center/contain no-repeat; }
+  .nav-cta-wrap{ display:flex; align-items:center; gap:13px; }
+  .nav-social{ display:flex; align-items:center; gap:8px; }
+  .soc.nav-soc{ width:38px; height:38px; background:var(--purple-soft); color:var(--purple-deep); }
+  .soc.nav-soc:hover{ background:var(--purple-soft); transform:translateY(-2px); }
+  .soc.nav-soc.fb:hover{ background:#1877F2; color:#fff; }
+  .soc.nav-soc.tt:hover{ background:#111; color:#fff; }
+  .soc.nav-soc svg{ width:18px; height:18px; }
+  /* ============ HAMBURGER ============ */
+  .menu-btn{
+    display:none; background:var(--purple-soft); border:none; cursor:pointer;
+    width:40px; height:40px; border-radius:12px;
+    flex-direction:column; align-items:center; justify-content:center; gap:5px;
+    flex:none; transition:background .18s;
+  }
+  .menu-btn:hover{ background:var(--pink-soft); }
+  .menu-btn span{
+    display:block; width:18px; height:2px; border-radius:2px;
+    background:var(--purple-deep); transition:transform .25s, opacity .25s, background .18s;
+  }
+  .menu-btn:hover span{ background:var(--pink-deep); }
+  .nav-open .menu-btn span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
+  .nav-open .menu-btn span:nth-child(2){ opacity:0; transform:scaleX(0); }
+  .nav-open .menu-btn span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
+
+  /* ============ HERO ============ */
+  .hero{ padding:60px 0 90px; overflow:hidden; }
+  .hero::before{
+    content:""; position:absolute; top:-180px; left:-160px; width:520px; height:520px;
+    background:radial-gradient(circle, rgba(230,220,247,.85), transparent 68%); z-index:0;
+  }
+  .hero::after{
+    content:""; position:absolute; top:-60px; right:-180px; width:560px; height:560px;
+    background:radial-gradient(circle, rgba(250,212,229,.7), transparent 66%); z-index:0;
+  }
+  .hero-grid{ display:grid; grid-template-columns:1.05fr .95fr; gap:48px; align-items:center; position:relative; z-index:2; }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:9px;
+    font-family:'Fredoka'; font-weight:600; letter-spacing:.16em; text-transform:uppercase;
+    color:var(--purple-deep); font-size:.95rem;
+    background:var(--pink-soft); padding:8px 18px 8px 14px; border-radius:999px;
+  }
+  .eyebrow .heart{ width:15px; height:15px; color:var(--pink); }
+  .hero h1{ margin:22px 0 8px; }
+  .hero h1 .l1{ display:block; font-size:clamp(1.5rem,3.2vw,2.1rem); color:var(--purple-deep); letter-spacing:.12em; text-transform:uppercase; font-weight:600; }
+  .hero h1 .l2{ display:block; font-family:'Yellowtail',cursive; font-weight:400; font-size:clamp(3.6rem,7.4vw,6.2rem); color:var(--pink); line-height:.92; }
+  .hero h1 .l3{ display:block; font-family:'Yellowtail',cursive; font-weight:400; font-size:clamp(3.2rem,6.6vw,5.6rem); color:var(--purple); line-height:.96; margin-top:-.05em; }
+  .lema{
+    display:inline-block; margin:26px 0 0;
+    background:var(--teal); color:#fff; font-weight:700; font-size:1.12rem;
+    padding:15px 24px; border-radius:18px; max-width:520px; box-shadow:var(--shadow-sm);
+  }
+  .lema .heart{ width:18px; height:18px; color:var(--pink-soft); margin-left:4px; }
+  .hero-cta{ display:flex; flex-wrap:wrap; gap:16px; margin-top:32px; align-items:center; }
+  .hero-note{ display:flex; align-items:center; gap:8px; color:var(--ink-soft); font-weight:600; font-size:.95rem; }
+
+  /* hero illustration */
+  .hero-art{ position:relative; width:100%; }
+  .art-blob{
+    position:absolute; inset:-6% -4% -10% -4%; border-radius:46% 54% 58% 42%/52% 44% 56% 48%;
+    background:linear-gradient(150deg, var(--purple-soft), var(--pink-wash));
+    z-index:0;
+  }
+  .hero-slot{
+    position:relative; z-index:1; width:100%; height:480px;
+    border-radius:46% 54% 58% 42% / 52% 44% 56% 48%;
+    overflow:hidden;
+    box-shadow:var(--shadow-md);
+  }
+  .hero-slot img{
+    width:100%; height:100%; object-fit:cover; object-position:center top; display:block;
+  }
+  .stickynote{
+    position:absolute; z-index:4; left:-34px; top:40px;
+    background:#FBE9A8; color:#6b5a2a; font-weight:700; font-size:.86rem; line-height:1.35;
+    padding:16px 16px; width:140px; border-radius:6px; transform:rotate(-6deg);
+    box-shadow:0 10px 22px rgba(120,90,30,.18);
+    font-family:'Nunito';
+  }
+  .stickynote::before{
+    content:""; position:absolute; top:-9px; left:50%; transform:translateX(-50%) rotate(8deg);
+    width:46px; height:16px; background:rgba(229,56,139,.45); border-radius:2px;
+  }
+  .float-star{ position:absolute; z-index:5; color:var(--yellow); }
+  .fs1{ width:54px; height:54px; right:-10px; top:-18px; }
+  .fs2{ width:30px; height:30px; left:30%; bottom:-14px; color:var(--purple); }
+  .float-heart{ position:absolute; z-index:5; color:var(--pink); }
+  .fh1{ width:34px; height:34px; right:8%; bottom:6%; }
+
+  /* ============ SECTION HEADER PILL ============ */
+  .pill-head{
+    display:inline-flex; align-items:center; gap:12px; margin:0 auto;
+    background:var(--purple); color:#fff; font-family:'Fredoka'; font-weight:600;
+    font-size:clamp(1.3rem,2.6vw,1.9rem); letter-spacing:.04em; text-transform:uppercase;
+    padding:14px 38px; border-radius:999px; box-shadow:var(--shadow-md);
+  }
+  .pill-head .star{ width:24px; height:24px; color:var(--yellow); }
+  .center{ text-align:center; }
+
+  /* ============ OFRECEMOS ============ */
+  .ofrecemos{ padding:30px 0 40px; }
+  .dashed{
+    margin-top:48px; border:2.5px dashed var(--purple-soft); border-radius:var(--r-lg);
+    padding:54px 40px; background:rgba(255,255,255,.5);
+  }
+  .cards4{ display:grid; grid-template-columns:repeat(4,1fr); gap:24px; }
+  .card{
+    text-align:center; padding:8px 14px; position:relative;
+  }
+  .card + .card::before{
+    content:""; position:absolute; left:-12px; top:14%; bottom:14%; width:2px;
+    background:linear-gradient(var(--purple-soft), transparent);
+  }
+  .ico{
+    width:118px; height:118px; border-radius:50%; margin:0 auto 22px; display:grid; place-items:center;
+  }
+  .ico.p{ background:var(--purple-soft); }
+  .ico.k{ background:var(--pink-soft); }
+  .ico.t{ background:var(--teal-soft); }
+  .ico.y{ background:#FEF3C7; }
+  .ico svg{ width:74px; height:74px; }
+  .card h3{ font-size:1.32rem; color:var(--purple-deep); text-transform:uppercase; letter-spacing:.02em; }
+  .card.k h3{ color:var(--pink); }
+  .card.t h3{ color:var(--teal-deep); }
+  .card.y h3{ color:#92400E; }
+  .card p{ margin-top:12px; color:var(--ink-soft); font-weight:600; font-size:1.02rem; max-width:280px; margin-left:auto; margin-right:auto; }
+
+  .incluido{
+    display:flex; align-items:center; justify-content:center; gap:12px; margin:42px auto 0;
+    background:var(--pink-soft); color:var(--purple-deep);
+    font-family:'Fredoka'; font-weight:600; font-size:1.18rem; letter-spacing:.04em; text-transform:uppercase;
+    padding:14px 32px; border-radius:999px; width:fit-content;
+  }
+  .incluido .heart{ width:20px; height:20px; color:var(--pink); }
+
+  /* ============ TARIFARIO ============ */
+  .tarifas{ padding:70px 0 60px; }
+  .tar-grid{ display:grid; grid-template-columns:1fr 1fr; gap:30px; margin-top:50px; position:relative; }
+  .plan{
+    background:var(--cream-card); border-radius:var(--r-lg); padding:14px; box-shadow:var(--shadow-md);
+    border:1.5px solid rgba(110,79,184,.08); position:relative; overflow:hidden;
+    transition:transform .2s, box-shadow .2s;
+  }
+  .plan:hover{ transform:translateY(-6px); box-shadow:0 26px 56px rgba(110,79,184,.22); }
+  .plan-head{ border-radius:24px; padding:22px 24px; text-align:center; color:#fff; }
+  .plan.q .plan-head{ background:linear-gradient(135deg,var(--pink),var(--pink-deep)); }
+  .plan.m .plan-head{ background:linear-gradient(135deg,var(--teal),var(--teal-deep)); }
+  .plan-head .ttl{ font-family:'Fredoka'; font-weight:600; font-size:1.55rem; letter-spacing:.02em; text-transform:uppercase; }
+  .plan-head .sub{ font-weight:700; font-size:.96rem; opacity:.92; margin-top:4px; }
+  .price{ text-align:center; padding:30px 10px 18px; }
+  .price .amount{ font-family:'Fredoka'; font-weight:700; font-size:clamp(3rem,6vw,4.4rem); line-height:1; }
+  .plan.q .amount{ color:var(--pink); }
+  .plan.m .amount{ color:var(--teal-deep); }
+  .price .per{ display:block; margin-top:8px; color:var(--ink-soft); font-weight:700; font-size:.98rem; }
+  .plan ul{ list-style:none; padding:6px 26px 28px; display:grid; gap:13px; }
+  .plan li{ display:flex; align-items:flex-start; gap:11px; font-weight:600; color:var(--ink); font-size:1.02rem; }
+  .tick{ width:22px; height:22px; border-radius:50%; flex:none; display:grid; place-items:center; margin-top:2px; }
+  .plan.q .tick{ background:var(--pink-soft); color:var(--pink-deep); }
+  .plan.m .tick{ background:var(--teal-soft); color:var(--teal-deep); }
+  .tick svg{ width:12px; height:12px; }
+  .plan .btn{ width:calc(100% - 52px); justify-content:center; margin:0 26px 26px; }
+  .plan.m .btn{ background:var(--teal); box-shadow:0 12px 26px rgba(35,155,155,.3); color:#fff; }
+  .plan.m .btn:hover{ background:var(--teal-deep); transform:translateY(-2px); }
+  .tar-mid{
+    position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); z-index:3;
+    width:58px; height:58px; border-radius:50%; background:#fff; box-shadow:var(--shadow-md);
+    display:grid; place-items:center; color:var(--purple);
+  }
+  .tar-mid .heart{ width:26px; height:26px; }
+
+  /* ============ BENEFICIOS ============ */
+  .beneficios{ padding:30px 0 50px; }
+  .ben-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:26px; margin-top:46px; }
+  .ben{
+    display:flex; gap:18px; align-items:flex-start;
+    background:var(--cream-card); border-radius:var(--r-md); padding:26px;
+    box-shadow:var(--shadow-sm); border:1.5px solid rgba(110,79,184,.07);
+  }
+  .ben-ico{ width:60px; height:60px; border-radius:50%; flex:none; display:grid; place-items:center; }
+  .ben-ico svg{ width:28px; height:28px; }
+  .ben.a .ben-ico{ background:var(--pink-soft); color:var(--pink); }
+  .ben.b .ben-ico{ background:#FBEFC4; color:var(--yellow); }
+  .ben.c .ben-ico{ background:var(--teal-soft); color:var(--teal); }
+  .ben h4{ font-size:1.12rem; color:var(--purple-deep); margin-bottom:5px; }
+  .ben p{ color:var(--ink-soft); font-weight:600; font-size:.98rem; }
+
+  .closing{ text-align:center; margin:64px auto 0; }
+  .closing .script{ font-size:clamp(2.2rem,5vw,3.6rem); color:var(--pink); }
+  .closing .heart{ width:34px; height:34px; color:var(--pink); margin-left:6px; }
+
+  /* ============ CTA BAND ============ */
+  .cta-band{ padding:30px 0 90px; }
+  .cta-inner{
+    position:relative; overflow:hidden;
+    background:linear-gradient(135deg,var(--purple),var(--pink));
+    border-radius:var(--r-lg); padding:60px 50px; text-align:center; color:#fff;
+    box-shadow:var(--shadow-md);
+  }
+  .cta-inner::before, .cta-inner::after{
+    content:""; position:absolute; border-radius:50%; background:rgba(255,255,255,.10);
+  }
+  .cta-inner::before{ width:240px; height:240px; top:-90px; right:-60px; }
+  .cta-inner::after{ width:180px; height:180px; bottom:-80px; left:-50px; }
+  .cta-inner h2{ font-size:clamp(1.8rem,4vw,2.7rem); position:relative; z-index:2; }
+  .cta-inner p{ margin:12px auto 28px; font-weight:600; font-size:1.12rem; opacity:.95; position:relative; z-index:2; max-width:560px; }
+  .cta-inner .btn{ position:relative; z-index:2; font-size:1.1rem; padding:16px 30px; }
+  .cta-mail{ position:relative; z-index:2; margin-top:18px; font-weight:700; font-size:1rem; }
+  .cta-mail a{ color:#fff; border-bottom:1px solid rgba(255,255,255,.45); padding-bottom:1px; transition:border-color .18s; }
+  .cta-mail a:hover{ border-color:#fff; }
+
+  /* ============ FOOTER ============ */
+  footer{ background:var(--purple-deep); color:#fff; padding:46px 0 30px; }
+  .foot-grid{ display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap; }
+  .foot-grid .brand{ color:#fff; }
+  .foot-grid .brand .badge{ background:rgba(255,255,255,.16); }
+  .foot-links{ display:flex; gap:26px; font-weight:700; }
+  .foot-links a{ opacity:.82; transition:opacity .18s; }
+  .foot-links a:hover{ opacity:1; }
+  .foot-social{ display:flex; align-items:center; gap:11px; }
+  .foot-social .lbl{ font-weight:800; font-size:.78rem; letter-spacing:.13em; text-transform:uppercase; opacity:.66; margin-right:3px; }
+  .soc{ width:42px; height:42px; border-radius:50%; display:grid; place-items:center; color:#fff; background:rgba(255,255,255,.14); transition:transform .18s, background .18s, color .18s; }
+  .soc:hover{ transform:translateY(-3px); background:#fff; }
+  .soc.fb:hover{ color:#1877F2; }
+  .soc.tt:hover{ color:#111; }
+  .soc svg{ width:20px; height:20px; display:block; }
+  .foot-copy{ text-align:center; opacity:.6; font-size:.88rem; margin-top:28px; font-weight:600; }
+  .foot-mail{ display:inline-flex; align-items:center; gap:8px; font-weight:700; font-size:.96rem; opacity:.9; transition:opacity .18s; }
+  .foot-mail:hover{ opacity:1; }
+  .foot-mail .at{ width:34px; height:34px; border-radius:50%; background:rgba(255,255,255,.16); display:grid; place-items:center; flex:none; }
+  .foot-mail .at svg{ width:17px; height:17px; }
+
+  /* ============ FLOATING WA ============ */
+  .wa-float{
+    position:fixed; right:24px; bottom:24px; z-index:80;
+    display:flex; align-items:center; gap:12px;
+    background:#25D366; color:#fff; font-family:'Fredoka'; font-weight:600; font-size:1rem;
+    padding:14px 20px 14px 16px; border-radius:999px;
+    box-shadow:0 14px 34px rgba(37,211,102,.45); cursor:pointer;
+    transition:transform .2s, box-shadow .2s;
+  }
+  .wa-float:hover{ transform:translateY(-3px) scale(1.02); }
+  .wa-float .wa-ico{ width:28px; height:28px; }
+  .wa-float .lbl{ max-width:0; overflow:hidden; white-space:nowrap; transition:max-width .35s ease, margin .35s; margin-left:-12px; }
+  .wa-float:hover .lbl{ max-width:200px; margin-left:0; }
+  .wa-pulse{ position:absolute; inset:0; border-radius:999px; box-shadow:0 0 0 0 rgba(37,211,102,.5); animation:pulse 2.4s infinite; }
+  @keyframes pulse{ 0%{ box-shadow:0 0 0 0 rgba(37,211,102,.45);} 70%{ box-shadow:0 0 0 18px rgba(37,211,102,0);} 100%{ box-shadow:0 0 0 0 rgba(37,211,102,0);} }
+  /* floating social (mobile only) */
+  .float-social{ position:fixed; right:24px; bottom:88px; z-index:80; display:none; flex-direction:column; gap:12px; }
+  .float-social a{ width:52px; height:52px; border-radius:50%; display:grid; place-items:center; color:#fff; box-shadow:0 10px 26px rgba(0,0,0,.22); transition:transform .18s, box-shadow .18s; }
+  .float-social a:hover{ transform:translateY(-3px); box-shadow:0 14px 30px rgba(0,0,0,.3); }
+  .float-social a.fb{ background:#1877F2; }
+  .float-social a.tt{ background:#111; }
+  .float-social svg{ width:24px; height:24px; }
+
+  /* ============ REVEAL ANIM ============ */
+  .reveal{ opacity:1; }
+  .js .reveal.in{ animation:revealIn .7s cubic-bezier(.2,.7,.3,1); }
+  .js .reveal.in.d1{ animation-delay:.07s; }
+  .js .reveal.in.d2{ animation-delay:.14s; }
+  .js .reveal.in.d3{ animation-delay:.21s; }
+  @keyframes revealIn{ from{ transform:translateY(20px); } to{ transform:none; } }
+  @media (prefers-reduced-motion:reduce){ .js .reveal.in{ animation:none; } }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width:960px){
+    .menu-btn{ display:flex; }
+    /* El menú se convierte en un panel deslizable bajo la barra */
+    .nav-links{
+      flex-direction:column; gap:0; align-items:stretch;
+      position:absolute; top:74px; left:0; right:0;
+      background:rgba(253,245,241,.97); backdrop-filter:blur(14px);
+      border-bottom:1px solid rgba(110,79,184,.12);
+      max-height:0; overflow:hidden;
+      transition:max-height .32s cubic-bezier(.4,0,.2,1);
+    }
+    .nav-open .nav-links{ max-height:280px; }
+    .nav-links > a{
+      padding:16px 28px; font-size:1.08rem;
+      border-bottom:1px solid rgba(110,79,184,.07);
+    }
+    .hero-grid{ grid-template-columns:1fr; gap:36px; }
+    .hero-art{ max-width:520px; margin:0 auto; }
+    .hero-slot{ height:auto; aspect-ratio:5 / 4; border-radius:26px; }
+    .hero-slot img{ object-position:center; }
+    .art-blob{ display:none; }
+    .stickynote{ left:-4px; right:auto; top:auto; bottom:14px; transform:rotate(-5deg); }
+    .cards4{ grid-template-columns:repeat(2,1fr); gap:28px; }
+    .card + .card::before{ display:none; }
+    .ben-grid{ grid-template-columns:1fr; }
+    .tar-grid{ grid-template-columns:1fr; gap:46px; }
+    .tar-mid{ display:none; }
+  }
+  @media (max-width:560px){
+    .wrap{ padding:0 18px; }
+    .nav-social{ display:none; }
+    .nav-cta-wrap > .btn-wa{ display:none; }
+    .brand{ font-size:1.06rem; gap:9px; }
+    .brand .badge{ width:34px; height:34px; border-radius:11px; }
+    .brand .badge .heart{ width:17px; height:17px; }
+    .dashed{ padding:38px 20px; }
+    .cards4{ grid-template-columns:1fr; gap:38px; }
+    .cta-inner{ padding:44px 26px; }
+    .foot-social{ display:none; }
+    .float-social{ display:flex; }
+    .wa-float{ width:52px; height:52px; padding:0; gap:0; justify-content:center; bottom:24px; right:24px; box-shadow:0 10px 26px rgba(0,0,0,.22); }
+    .wa-float .wa-ico{ width:26px; height:26px; margin:0; }
+    .wa-float .lbl{ display:none; }
+    .wa-float .wa-pulse{ display:none; }
+    .hero-art{ width:auto; max-width:none; margin-left:-18px; margin-right:-18px; }
+    .hero-slot{ border-radius:0; box-shadow:none; }
+  }
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add('js');</script>
+
+<!-- reusable svgs -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 21s-7.6-4.9-10-9.4C.7 9 1.7 5.7 4.7 4.8c2-.6 3.9.3 4.9 1.9 1-1.6 2.9-2.5 4.9-1.9 3 .9 4 4.2 2.7 6.8C19.6 16.1 12 21 12 21z"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2.5l2.7 5.9 6.4.6c.8.1 1.1 1 .5 1.6l-4.8 4.3 1.4 6.3c.2.8-.7 1.4-1.4 1l-5.5-3.3-5.5 3.3c-.7.4-1.6-.2-1.4-1l1.4-6.3-4.8-4.3c-.6-.6-.3-1.5.5-1.6l6.4-.6L12 2.5z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 32 32"><path fill="currentColor" d="M16 3C9 3 3.4 8.6 3.4 15.6c0 2.4.7 4.7 1.9 6.7L3 29l6.9-2.2c1.9 1 4 1.6 6.1 1.6 7 0 12.6-5.6 12.6-12.6S23 3 16 3zm0 22.8c-1.9 0-3.7-.5-5.3-1.5l-.4-.2-4.1 1.3 1.3-4-.2-.4c-1-1.6-1.6-3.5-1.6-5.5C5.4 9.8 10.2 5 16 5s10.6 4.8 10.6 10.6S21.8 25.8 16 25.8zm5.8-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.3-.2-.3 0-.5.1-.7.1-.1.3-.4.5-.6.1-.2.2-.3.3-.5.1-.2 0-.4 0-.6 0-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.2 3.4 5.3 4.7.7.3 1.3.5 1.8.6.7.2 1.4.2 1.9.1.6-.1 1.9-.8 2.1-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></symbol>
+</svg>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="#inicio" class="brand">
+      <span class="badge"><span class="heart"></span></span>
+      Aprendamos Juntos
+    </a>
+    <nav class="nav-links" id="nav-menu" aria-label="Menú principal">
+      <a href="#ofrecemos">Servicios</a>
+      <a href="#tarifas">Tarifas</a>
+      <a href="#beneficios">Beneficios</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <div class="nav-cta-wrap">
+      <div class="nav-social">
+        <a class="soc nav-soc fb" href="https://www.facebook.com/share/1EigzRYmUD/" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.3-1.5 1.6-1.5h1.7V3.6c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.5-4 4.1v2.3H7.6V13h2.5v8z"/></svg>
+        </a>
+        <a class="soc nav-soc tt" href="https://www.tiktok.com/@aprendiendojuntostaller" target="_blank" rel="noopener" aria-label="TikTok">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.5 3c.3 2 1.4 3.4 3.5 3.6v2.4c-1.2.1-2.3-.3-3.5-1v5.7c0 3.4-2.6 5.6-5.7 4.9-3.4-.8-4.5-4.8-2-7.2.9-.9 2.1-1.3 3.4-1.1v2.5c-.4-.1-.8-.1-1.2 0-1 .3-1.6 1-1.5 2 .1 1.4 1.6 2.2 2.9 1.5.8-.4 1.1-1.2 1.1-2.1V3z"/></svg>
+        </a>
+      </div>
+      <a class="btn btn-wa" href="#contacto"><span class="wa-ico" aria-hidden="true"></span> Escríbeme</a>
+      <button class="menu-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow reveal"><span class="heart" aria-hidden="true"></span> Acompañamiento escolar</span>
+      <h1 class="reveal d1">
+        <span class="l1">Refuerzo y</span>
+        <span class="l2">Nivelación</span>
+        <span class="l3">Escolar</span>
+      </h1>
+      <p class="lema reveal d2">Acompañamos el aprendizaje de tus hijos con amor, paciencia y dedicación <span class="heart" aria-hidden="true"></span></p>
+      <div class="hero-cta reveal d3">
+        <a class="btn btn-pink" href="#contacto"><span class="wa-ico" aria-hidden="true"></span> Quiero más información</a>
+        <a class="btn btn-ghost" href="#tarifas">Ver tarifas</a>
+      </div>
+    </div>
+
+    <div class="hero-art reveal d2">
+      <div class="art-blob" aria-hidden="true"></div>
+      <div class="stickynote" aria-hidden="true">Enseñar es inspirar y acompañar para crecer</div>
+      <span class="star float-star fs1" aria-hidden="true"></span>
+      <span class="star float-star fs2" aria-hidden="true"></span>
+      <span class="heart float-heart fh1" aria-hidden="true"></span>
+      <div class="hero-slot">
+        <img src="assets/hero.webp" alt="Docente de Aprendamos Juntos" width="600" height="480" loading="eager">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OFRECEMOS -->
+<section class="ofrecemos" id="ofrecemos" aria-labelledby="ofrecemos-title">
+  <div class="wrap center">
+    <span class="pill-head reveal" id="ofrecemos-title">¿Qué ofrecemos?</span>
+    <div class="dashed reveal d1">
+      <div class="cards4">
+
+        <div class="card p reveal d1">
+          <div class="ico p" aria-hidden="true">
+            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+              <path d="M32 19c-5.5-3.6-13.5-4-21-2v29c7.5-2 15.5-1.6 21 2z" fill="#fff" stroke="#6E4FB8" stroke-width="2.6" stroke-linejoin="round"/>
+              <path d="M32 19c5.5-3.6 13.5-4 21-2v29c-7.5-2-15.5-1.6-21 2z" fill="#EDE7FA" stroke="#6E4FB8" stroke-width="2.6" stroke-linejoin="round"/>
+              <path d="M32 19v29" stroke="#6E4FB8" stroke-width="2.6" stroke-linecap="round"/>
+              <path d="M16 25h10M16 31h10M16 37h8" stroke="#B9A7E6" stroke-width="2.2" stroke-linecap="round"/>
+              <path d="M38 25h10M38 31h10M38 37h8" stroke="#C3B4EA" stroke-width="2.2" stroke-linecap="round"/>
+              <path d="M41 15v13l4-3.2 4 3.2V15z" fill="#E5388B"/>
+            </svg>
+          </div>
+          <h3>Nivelación<br>en Lectura</h3>
+          <p>Fortalecemos la lectura comprensiva, la fluidez y la comprensión.</p>
+        </div>
+
+        <div class="card y reveal d2">
+          <div class="ico y" aria-hidden="true">
+            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+              <!-- cuadro con los cuatro operadores matemáticos -->
+              <rect x="10" y="10" width="44" height="44" rx="8" fill="#FEF9E7" stroke="#B45309" stroke-width="2.6"/>
+              <!-- líneas divisorias centrales (tenues) -->
+              <line x1="32" y1="12" x2="32" y2="52" stroke="#B45309" stroke-width="1.2" stroke-dasharray="3 3" opacity=".3"/>
+              <line x1="12" y1="32" x2="52" y2="32" stroke="#B45309" stroke-width="1.2" stroke-dasharray="3 3" opacity=".3"/>
+              <!-- + arriba-izquierda -->
+              <path d="M18 22h9M22.5 17.5v9" stroke="#B45309" stroke-width="2.6" stroke-linecap="round"/>
+              <!-- − arriba-derecha -->
+              <path d="M37 22h9" stroke="#B45309" stroke-width="2.6" stroke-linecap="round"/>
+              <!-- × abajo-izquierda -->
+              <path d="M18 38l8 8M18 46l8-8" stroke="#E5388B" stroke-width="2.6" stroke-linecap="round"/>
+              <!-- = abajo-derecha -->
+              <path d="M37 39.5h9M37 45.5h9" stroke="#B45309" stroke-width="2.6" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Nivelación<br>en Matemáticas</h3>
+          <p>Desarrollamos el pensamiento lógico, resolución de problemas y habilidades numéricas básicas.</p>
+        </div>
+
+        <div class="card k reveal d3">
+          <div class="ico k" aria-hidden="true">
+            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+              <path d="M32 16 58 27 32 38 6 27z" fill="#F7A8CE" stroke="#D11A75" stroke-width="2.6" stroke-linejoin="round"/>
+              <path d="M18 31v11c0 3.6 28 3.6 28 0V31" fill="#fff" stroke="#D11A75" stroke-width="2.6" stroke-linejoin="round"/>
+              <path d="M58 27v15" stroke="#D11A75" stroke-width="2.6" stroke-linecap="round"/>
+              <circle cx="58" cy="45" r="3.4" fill="#D11A75"/>
+            </svg>
+          </div>
+          <h3>Refuerzo<br>Escolar</h3>
+          <p>Apoyo en las diferentes áreas para mejorar el rendimiento académico.</p>
+        </div>
+
+        <div class="card t reveal d3">
+          <div class="ico t" aria-hidden="true">
+            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+              <rect x="15" y="15" width="34" height="39" rx="5" fill="#fff" stroke="#1c8585" stroke-width="2.6"/>
+              <rect x="24" y="10" width="16" height="9" rx="3" fill="#9BDBDB" stroke="#1c8585" stroke-width="2.6"/>
+              <path d="M22 36l6.5 6.5L42 29" fill="none" stroke="#1c8585" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>Acompañamiento<br>en Tareas</h3>
+          <p>Acompañamos y guiamos en las tareas diarias para reforzar el aprendizaje.</p>
+        </div>
+
+      </div>
+    </div>
+    <div class="incluido reveal">
+      <span class="heart" aria-hidden="true"></span>
+      Todo incluido en nuestros planes
+      <span class="heart" aria-hidden="true"></span>
+    </div>
+  </div>
+</section>
+
+<!-- TARIFARIO -->
+<section class="tarifas" id="tarifas" aria-labelledby="tarifas-title">
+  <div class="wrap center">
+    <span class="pill-head reveal" id="tarifas-title"><span class="star" aria-hidden="true"></span> Tarifario <span class="star" aria-hidden="true"></span></span>
+    <div class="tar-grid">
+
+      <div class="plan q reveal d1">
+        <div class="plan-head">
+          <div class="ttl">Quincena Laboral</div>
+          <div class="sub">Equivalente a 10 días hábiles de clase</div>
+        </div>
+        <div class="price">
+          <div class="amount">$100.000</div>
+          <span class="per">por estudiante</span>
+        </div>
+        <ul>
+          <li>
+            <span class="tick" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>
+            </span>
+            Nivelación en lectura
+          </li>
+          <li>
+            <span class="tick" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>
+            </span>
+            Refuerzo en todas las áreas
+          </li>
+          <li>
+            <span class="tick" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>
+            </span>
+            Acompañamiento en tareas diarias
+          </li>
+        </ul>
+        <a class="btn btn-pink" href="#contacto">Quiero este plan</a>
+      </div>
+
+      <div class="plan m reveal d2">
+        <div class="plan-head">
+          <div class="ttl">Mes Completo</div>
+          <div class="sub">4 semanas laborales</div>
+        </div>
+        <div class="price">
+          <div class="amount">$200.000</div>
+          <span class="per">por estudiante</span>
+        </div>
+        <ul>
+          <li>
+            <span class="tick" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>
+            </span>
+            Todo lo de la quincena
+          </li>
+          <li>
+            <span class="tick" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>
+            </span>
+            Seguimiento continuo del progreso
+          </li>
+          <li>
+            <span class="tick" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>
+            </span>
+            Atención personalizada y constante
+          </li>
+        </ul>
+        <a class="btn" href="#contacto">Quiero este plan</a>
+      </div>
+
+      <div class="tar-mid" aria-hidden="true"><span class="heart"></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFICIOS -->
+<section class="beneficios" id="beneficios" aria-labelledby="beneficios-title">
+  <div class="wrap center">
+    <span class="pill-head reveal" id="beneficios-title">¿Por qué elegirnos?</span>
+    <div class="ben-grid">
+
+      <div class="ben a reveal d1">
+        <div class="ben-ico" aria-hidden="true">
+          <span class="heart" style="width:28px;height:28px"></span>
+        </div>
+        <div style="text-align:left">
+          <h4>Apoyo integral</h4>
+          <p>Acompañamiento en el aprendizaje para que tus hijos avancen con confianza.</p>
+        </div>
+      </div>
+
+      <div class="ben b reveal d2">
+        <div class="ben-ico" aria-hidden="true">
+          <span class="star" style="width:28px;height:28px"></span>
+        </div>
+        <div style="text-align:left">
+          <h4>Atención personalizada</h4>
+          <p>Un ambiente de respeto, paciencia y motivación para cada estudiante.</p>
+        </div>
+      </div>
+
+      <div class="ben c reveal d3">
+        <div class="ben-ico" aria-hidden="true">
+          <span class="check" style="width:28px;height:28px"></span>
+        </div>
+        <div style="text-align:left">
+          <h4>Compromiso real</h4>
+          <p>Comprometidos con el desarrollo académico y emocional de cada niño/a.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="closing reveal">
+      <span class="script">Aprender hoy, para un mejor mañana</span>
+      <span class="heart" aria-hidden="true"></span>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-band" id="contacto">
+  <div class="wrap">
+    <div class="cta-inner reveal">
+      <h2>¡Contáctame para más información!</h2>
+      <p>Estoy aquí para ayudarte. Escríbeme por WhatsApp y conversemos sobre cómo acompañar el aprendizaje de tus hijos.</p>
+      <a class="btn btn-wa" href="https://wa.me/0000000000?text=Hola,%20quiero%20información%20sobre%20el%20refuerzo%20escolar" target="_blank" rel="noopener">
+        <span class="wa-ico" aria-hidden="true"></span> Escríbeme por WhatsApp
+      </a>
+      <div class="cta-mail">o escríbenos a <a href="mailto:aprendiendojuntostallertareas@gmail.com">aprendiendojuntostallertareas@gmail.com</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <a href="#inicio" class="brand">
+        <span class="badge"><span class="heart" style="width:20px;height:20px" aria-hidden="true"></span></span>
+        Aprendamos Juntos
+      </a>
+      <nav class="foot-links" aria-label="Menú pie de página">
+        <a href="#ofrecemos">Servicios</a>
+        <a href="#tarifas">Tarifas</a>
+        <a href="#beneficios">Beneficios</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <div class="foot-social">
+        <span class="lbl">Síguenos</span>
+        <a class="soc fb" href="https://www.facebook.com/share/1EigzRYmUD/" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.3-1.5 1.6-1.5h1.7V3.6c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.5-4 4.1v2.3H7.6V13h2.5v8z"/></svg>
+        </a>
+        <a class="soc tt" href="https://www.tiktok.com/@aprendiendojuntostaller" target="_blank" rel="noopener" aria-label="TikTok">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.5 3c.3 2 1.4 3.4 3.5 3.6v2.4c-1.2.1-2.3-.3-3.5-1v5.7c0 3.4-2.6 5.6-5.7 4.9-3.4-.8-4.5-4.8-2-7.2.9-.9 2.1-1.3 3.4-1.1v2.5c-.4-.1-.8-.1-1.2 0-1 .3-1.6 1-1.5 2 .1 1.4 1.6 2.2 2.9 1.5.8-.4 1.1-1.2 1.1-2.1V3z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:30px;">
+      <a class="foot-mail" href="mailto:aprendiendojuntostallertareas@gmail.com">
+        <span class="at"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M4 7l8 6 8-6"></path></svg></span>
+        aprendiendojuntostallertareas@gmail.com
+      </a>
+    </div>
+    <div class="foot-copy">Refuerzo y Nivelación Escolar · Hecho con <span style="color:var(--pink-soft)" aria-hidden="true">♥</span> para acompañar a cada estudiante</div>
+  </div>
+</footer>
+
+<!-- FLOATING WA -->
+<a class="wa-float" href="https://wa.me/0000000000?text=Hola,%20quiero%20información%20sobre%20el%20refuerzo%20escolar" target="_blank" rel="noopener" aria-label="Escríbeme por WhatsApp">
+  <span class="wa-pulse" aria-hidden="true"></span>
+  <span class="wa-ico" aria-hidden="true"></span>
+  <span class="lbl">Escríbeme por WhatsApp</span>
+</a>
+
+<!-- FLOATING SOCIAL (mobile) -->
+<div class="float-social" aria-label="Redes sociales">
+  <a class="fb" href="https://www.facebook.com/share/1EigzRYmUD/" target="_blank" rel="noopener" aria-label="Facebook">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.3-1.5 1.6-1.5h1.7V3.6c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.5-4 4.1v2.3H7.6V13h2.5v8z"/></svg>
+  </a>
+  <a class="tt" href="https://www.tiktok.com/@aprendiendojuntostaller" target="_blank" rel="noopener" aria-label="TikTok">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.5 3c.3 2 1.4 3.4 3.5 3.6v2.4c-1.2.1-2.3-.3-3.5-1v5.7c0 3.4-2.6 5.6-5.7 4.9-3.4-.8-4.5-4.8-2-7.2.9-.9 2.1-1.3 3.4-1.1v2.5c-.4-.1-.8-.1-1.2 0-1 .3-1.6 1-1.5 2 .1 1.4 1.6 2.2 2.9 1.5.8-.4 1.1-1.2 1.1-2.1V3z"/></svg>
+  </a>
+</div>
+
+<script>
+  (function(){
+    var nav    = document.querySelector('.nav');
+    var btn    = document.querySelector('.menu-btn');
+    var links  = document.querySelectorAll('#nav-menu a');
+
+    function close(){ nav.classList.remove('nav-open'); btn.setAttribute('aria-expanded','false'); }
+    function toggle(){ var open = nav.classList.toggle('nav-open'); btn.setAttribute('aria-expanded', open ? 'true' : 'false'); }
+
+    btn.addEventListener('click', function(e){ e.stopPropagation(); toggle(); });
+    links.forEach(function(a){ a.addEventListener('click', close); });
+    document.addEventListener('click', function(e){ if(!nav.contains(e.target)) close(); });
+    document.addEventListener('keydown', function(e){ if(e.key==='Escape') close(); });
+  })();
+</script>
+
+<script>
+  (function(){
+    var els = [].slice.call(document.querySelectorAll('.reveal'));
+    function show(el){ el.classList.add('in'); }
+    function sweep(){
+      var vh = window.innerHeight || document.documentElement.clientHeight;
+      for (var i=els.length-1; i>=0; i--){
+        var el = els[i];
+        var r = el.getBoundingClientRect();
+        if (r.top < vh * 0.92 && r.bottom > 0){ show(el); els.splice(i,1); }
+      }
+      if (!els.length){ window.removeEventListener('scroll', onScroll); }
+    }
+    function onScroll(){ window.requestAnimationFrame(sweep); }
+    window.requestAnimationFrame(sweep);
+    window.addEventListener('scroll', onScroll, { passive:true });
+    window.addEventListener('resize', onScroll, { passive:true });
+    setTimeout(function(){ els.slice().forEach(show); }, 2500);
+  })();
+</script>
+</body>
+</html>
