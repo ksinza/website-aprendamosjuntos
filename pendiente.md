@@ -101,6 +101,7 @@ Si se activa Analytics se recopilan datos. Recomendado agregar al menos una secc
 | 5 | Preload imagen hero | 🟢 Baja | ✅ Completado |
 | 6 | Google Analytics / Firebase Analytics | 🟢 Baja | Pendiente |
 | 7 | Política de privacidad | 🟢 Baja | Pendiente |
+| — | Alineación texto items tarifario en móvil | — | ✅ Completado |
 | — | Facebook y TikTok | — | ✅ Completado |
 | — | Emails rotos por Cloudflare (CTA + footer + script) | — | ✅ Completado |
 | — | Tarjeta Nivelación en Matemáticas | — | ✅ Completado |
