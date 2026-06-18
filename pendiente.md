@@ -94,7 +94,7 @@ Si se activa Analytics se recopilan datos. Recomendado agregar al menos una secc
 
 | # | Tarea | Prioridad | Estado |
 |---|---|---|---|
-| 1 | Número de WhatsApp real | 🔴 Alta | Pendiente |
+| 1 | Número de WhatsApp real | 🔴 Alta | ✅ Completado |
 | 2 | Metaetiquetas SEO y Open Graph | 🟠 Media | Pendiente |
 | 3 | Imagen OG (`assets/og-image.jpg`) | 🟠 Media | ✅ Completado |
 | 4 | Headers de caché en `firebase.json` | 🟢 Baja | Pendiente |
