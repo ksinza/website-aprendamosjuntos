@@ -12,21 +12,36 @@ Documentación del estado actual del sitio web (`public/index.html`).
 | Tipo de negocio | Taller de refuerzo y nivelación escolar |
 | Archivo principal | `public/index.html` |
 | Hosting | Firebase Hosting (`public/` como raíz pública) |
+| Dominio | https://www.aprendiendojuntostaller.com/ |
 | Email de contacto | aprendiendojuntostallertareas@gmail.com |
-| WhatsApp | ⚠️ Placeholder `0000000000` — reemplazar con número real |
+| WhatsApp | `+57 317 017 1728` (enlace `wa.me/573170171728`) |
 | Facebook | https://www.facebook.com/share/1EigzRYmUD/ |
 | TikTok | https://www.tiktok.com/@aprendiendojuntostaller |
 
 ---
 
-## Tecnología
+## Stack técnico
 
-- **HTML5 semántico**, todo en un único archivo autocontenido (`index.html`)
-- **CSS custom** embebido en `<style>` — sin frameworks externos
-- **Google Fonts** (vía CDN): Fredoka, Nunito, Yellowtail
-- **Iconos:** SVG inline optimizados (sin librerías externas)
-- **JavaScript mínimo** inline: menú hamburguesa y animaciones de scroll reveal
-- Sin dependencias npm ni bundle de JS
+### Frontend
+| Capa | Detalle |
+|---|---|
+| Markup | HTML5 semántico · sin framework |
+| Estilos | CSS custom embebido en `<style>` · CSS custom properties · sin framework (no Tailwind, no Bootstrap) |
+| Scripts | JavaScript vanilla inline · sin bundler (no Webpack, no Vite) |
+| Fuentes | Google Fonts CDN: **Fredoka**, **Nunito**, **Yellowtail** |
+| Iconos | SVG inline optimizados · sin librerías externas |
+| Imágenes | `.webp` para hero · `.png` / `.svg` para favicons y PWA |
+
+### Infraestructura y deploy
+| Capa | Detalle |
+|---|---|
+| Hosting | **Firebase Hosting** · carpeta pública `public/` |
+| CI/CD | **GitHub Actions** · deploy automático en merge a `main` + preview en PRs |
+| Workflows | `.github/workflows/firebase-hosting-merge.yml` · `.github/workflows/firebase-hosting-pull-request.yml` |
+| Config Firebase | `firebase.json` · `public/` como raíz · sin rewrites ni redirects |
+
+### Sin dependencias de build
+No hay `package.json`, no hay `node_modules`, no hay paso de compilación. El sitio se sirve directamente desde HTML/CSS/JS estáticos.
 
 ---
 
@@ -153,3 +168,57 @@ Frase de cierre (Yellowtail / rosa): "Aprender hoy, para un mejor mañana ♥"
 |---|---|
 | `≤ 960px` | Hero en columna única · cards en `repeat(3,1fr)` · planes apilados · menú hamburguesa visible |
 | `≤ 560px` | Cards en `1fr` · padding reducido · WA float solo icono · nav social oculto · social flotante visible |
+
+---
+
+## Páginas adicionales
+
+### `public/404.html` — Página de error personalizada
+
+Página 404 de marca completa, consistente con el diseño del sitio principal.
+
+**Características:**
+- `<meta name="robots" content="noindex">` — no indexada por buscadores
+- Número "404" animado: el cero central es un círculo degradado rosa-púrpura con un corazón blanco y animación `halo` de pulso
+- Titular: *"¡Ups! Esta página se fue de recreo"* (combinación Fredoka + Yellowtail)
+- Decoración: estrellas y corazón flotantes posicionados absolutamente
+- CTAs: "Volver al inicio" (btn-pink) + "Contáctanos" (btn-ghost → `index.html#contacto`)
+- Chips de navegación rápida: Servicios · Tarifas · Beneficios · Contacto
+- Nav simplificada (solo logo + botón "Ir al inicio")
+- Footer con links incluyendo enlace a `privacidad.html`
+- Misma paleta y fuentes que `index.html`
+
+---
+
+### `public/privacidad/index.html` — Política de Privacidad
+
+Ruta: `/privacidad/` · Título: *"Política de Privacidad | Aprendiendo Juntos"*
+
+**Estructura de la página:**
+
+| Sección | Descripción |
+|---|---|
+| Nav | Sticky completa con hamburguesa, links internos (apuntan a `index.html#*`), iconos FB/TikTok, botón WhatsApp |
+| Privacy Hero | Eyebrow pill "Tu confianza nos importa" · título Fredoka + Yellowtail · badge de última actualización con dot teal |
+| Cuerpo legal | Tarjeta (`priv-card`) con intro + 4 secciones numeradas + bloque de cierre |
+| Footer | Igual al de `index.html` + email clicable + iconos sociales |
+| Flotante | Botón WhatsApp flotante con pulso + social flotante en mobile |
+
+**Las 4 secciones de la política** (badges de color):
+
+| # | Título | Color badge |
+|---|---|---|
+| 1 | Recopilación de información | Rosa (`--pink`) |
+| 2 | Uso de la información | Púrpura (`--purple`) |
+| 3 | Seguridad de los datos | Teal (`--teal`) |
+| 4 | Derechos del usuario | Amarillo (`--yellow`) |
+
+**Puntos clave del contenido legal:**
+- Solo se recopila número de teléfono y nombre de perfil público de WhatsApp
+- No se comparte, vende ni alquila información a terceros
+- Cifrado extremo a extremo de WhatsApp (Meta + Google Cloud Platform)
+- Para darse de baja: escribir `Detener` en el chat o email de contacto
+- Última actualización: 19 de junio de 2026
+
+**WhatsApp número real:** `+57 317 017 1728` (`wa.me/573170171728`)  
+— mismo número en todas las páginas y CTA flotante

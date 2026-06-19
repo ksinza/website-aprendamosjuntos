@@ -20,22 +20,25 @@ Ejemplo: `https://wa.me/573001234567?text=Hola,%20quiero%20información%20sobre%
 
 ## 🟠 Prioridad media — SEO y visibilidad
 
-### 2. Metaetiquetas SEO y Open Graph
-Sin estas etiquetas el sitio no aparece bien en Google ni en las vistas previas al compartir el enlace por WhatsApp o Facebook.
+### 2. Metaetiquetas SEO y Open Graph ✅
+Dominio real: `https://www.aprendiendojuntostaller.com/`
 
-Agregar dentro del `<head>`, reemplazando `TU-DOMINIO` con la URL real de Firebase:
+Etiquetas agregadas en `public/index.html`:
 
 ```html
 <meta name="description" content="Refuerzo y nivelación escolar con amor y dedicación. Lectura, Matemáticas, Maquetas y más. Planes desde $100.000.">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://TU-DOMINIO.web.app/">
-
+<link rel="canonical" href="https://www.aprendiendojuntostaller.com/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_CO">
 <meta property="og:title" content="Aprendamos Juntos — Refuerzo y Nivelación Escolar">
 <meta property="og:description" content="Acompañamos el aprendizaje de tus hijos con amor, paciencia y dedicación.">
-<meta property="og:url" content="https://TU-DOMINIO.web.app/">
-<meta property="og:image" content="https://TU-DOMINIO.web.app/assets/og-image.jpg">
+<meta property="og:url" content="https://www.aprendiendojuntostaller.com/">
+<meta property="og:image" content="https://www.aprendiendojuntostaller.com/assets/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Aprendamos Juntos — Refuerzo y Nivelación Escolar">
+<meta name="twitter:description" content="Acompañamos el aprendizaje de tus hijos con amor, paciencia y dedicación.">
+<meta name="twitter:image" content="https://www.aprendiendojuntostaller.com/assets/og-image.jpg">
 ```
 
 ### 3. Imagen Open Graph (`assets/og-image.jpg`)
@@ -95,7 +98,7 @@ Si se activa Analytics se recopilan datos. Recomendado agregar al menos una secc
 | # | Tarea | Prioridad | Estado |
 |---|---|---|---|
 | 1 | Número de WhatsApp real | 🔴 Alta | ✅ Completado |
-| 2 | Metaetiquetas SEO y Open Graph | 🟠 Media | Pendiente |
+| 2 | Metaetiquetas SEO y Open Graph | 🟠 Media | ✅ Completado |
 | 3 | Imagen OG (`assets/og-image.jpg`) | 🟠 Media | ✅ Completado |
 | 4 | Headers de caché en `firebase.json` | 🟢 Baja | Pendiente |
 | 5 | Preload imagen hero | 🟢 Baja | ✅ Completado |
