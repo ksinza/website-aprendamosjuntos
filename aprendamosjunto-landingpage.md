@@ -1,4 +1,4 @@
-# Landing Page — Aprendamos Juntos
+# Landing Page — Aprendiendo Juntos
 
 Documentación del estado actual del sitio web (`public/index.html`).
 
@@ -8,7 +8,7 @@ Documentación del estado actual del sitio web (`public/index.html`).
 
 | Campo | Valor |
 |---|---|
-| Nombre del negocio | Aprendamos Juntos |
+| Nombre del negocio | Aprendiendo Juntos |
 | Tipo de negocio | Taller de refuerzo y nivelación escolar |
 | Archivo principal | `public/index.html` |
 | Hosting | Firebase Hosting (`public/` como raíz pública) |
@@ -80,7 +80,7 @@ No hay `package.json`, no hay `node_modules`, no hay paso de compilación. El si
 ## Estructura de secciones
 
 ### 1. Nav (sticky)
-- Logo + nombre de marca "Aprendamos Juntos" con badge de corazón
+- Logo + nombre de marca "Aprendiendo Juntos" con badge de corazón
 - Links internos: Servicios · Tarifas · Beneficios · Contacto
 - Iconos de Facebook y TikTok (escritorio, ocultos en < 560px)
 - Botón "Escríbeme" → `#contacto`
@@ -133,7 +133,7 @@ Frase de cierre (Yellowtail / rosa): "Aprender hoy, para un mejor mañana ♥"
 - Email clicable: `aprendiendojuntostallertareas@gmail.com`
 
 ### 7. Footer
-- Logo + "Aprendamos Juntos" + enlaces de navegación + iconos FB y TikTok
+- Logo + "Aprendiendo Juntos" + enlaces de navegación + iconos FB y TikTok
 - Email con ícono de sobre
 - Copyright: "Refuerzo y Nivelación Escolar · Hecho con ♥ para acompañar a cada estudiante"
 

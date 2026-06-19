@@ -1,4 +1,4 @@
-# Tareas Pendientes — Aprendamos Juntos
+# Tareas Pendientes — Aprendiendo Juntos
 
 > Última revisión: 13 de junio de 2026.
 
@@ -31,12 +31,12 @@ Etiquetas agregadas en `public/index.html`:
 <link rel="canonical" href="https://www.aprendiendojuntostaller.com/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_CO">
-<meta property="og:title" content="Aprendamos Juntos — Refuerzo y Nivelación Escolar">
+<meta property="og:title" content="Aprendiendo Juntos — Refuerzo y Nivelación Escolar">
 <meta property="og:description" content="Acompañamos el aprendizaje de tus hijos con amor, paciencia y dedicación.">
 <meta property="og:url" content="https://www.aprendiendojuntostaller.com/">
 <meta property="og:image" content="https://www.aprendiendojuntostaller.com/assets/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Aprendamos Juntos — Refuerzo y Nivelación Escolar">
+<meta name="twitter:title" content="Aprendiendo Juntos — Refuerzo y Nivelación Escolar">
 <meta name="twitter:description" content="Acompañamos el aprendizaje de tus hijos con amor, paciencia y dedicación.">
 <meta name="twitter:image" content="https://www.aprendiendojuntostaller.com/assets/og-image.jpg">
 ```
