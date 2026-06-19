@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Política de Privacidad | Aprendiendo Juntos</title>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+<meta name="theme-color" content="#E5388B">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&family=Yellowtail&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:      #FDF5F1;
+    --cream-card: #FFFDFC;
+    --ink:        #4a3a6b;
+    --ink-soft:   #6f6189;
+    --pink:       #E5388B;
+    --pink-deep:  #D11A75;
+    --pink-soft:  #FAD4E5;
+    --pink-wash:  #FCE9F1;
+    --purple:     #6E4FB8;
+    --purple-deep:#5a3da3;
+    --purple-soft:#E6DCF7;
+    --teal:       #239B9B;
+    --teal-deep:  #1c8585;
+    --teal-soft:  #CFEBEB;
+    --yellow:     #F4C740;
+    --shadow-sm:  0 4px 14px rgba(110,79,184,.10);
+    --shadow-md:  0 14px 40px rgba(110,79,184,.16);
+    --shadow-pink:0 16px 40px rgba(229,56,139,.22);
+    --r-lg: 32px;
+    --r-md: 22px;
+    --r-sm: 16px;
+    --maxw: 1180px;
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html{ scroll-behavior:smooth; }
+  body{
+    font-family:'Nunito', sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4{ font-family:'Fredoka', sans-serif; font-weight:600; line-height:1.08; letter-spacing:-.01em; }
+  .script{ font-family:'Yellowtail', cursive; font-weight:400; letter-spacing:.01em; }
+  a{ color:inherit; text-decoration:none; }
+  img{ max-width:100%; display:block; }
+  .wrap{ width:100%; max-width:var(--maxw); margin:0 auto; padding:0 28px; }
+  section{ position:relative; }
+
+  /* decorative bits */
+  .heart, .star, .check{ display:inline-block; vertical-align:middle; background-color:currentColor; -webkit-mask-repeat:no-repeat; mask-repeat:no-repeat; -webkit-mask-position:center; mask-position:center; -webkit-mask-size:contain; mask-size:contain; }
+  .heart{ -webkit-mask-image:url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%3E%3Cpath%20d='M12%2021.35l-1.45-1.32C5.4%2015.36%202%2012.28%202%208.5%202%205.42%204.42%203%207.5%203c1.74%200%203.41.81%204.5%202.09C13.09%203.81%2014.76%203%2016.5%203%2019.58%203%2022%205.42%2022%208.5c0%203.78-3.4%206.86-8.55%2011.54L12%2021.35z'/%3E%3C/svg%3E"); mask-image:url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%3E%3Cpath%20d='M12%2021.35l-1.45-1.32C5.4%2015.36%202%2012.28%202%208.5%202%205.42%204.42%203%207.5%203c1.74%200%203.41.81%204.5%202.09C13.09%203.81%2014.76%203%2016.5%203%2019.58%203%2022%205.42%2022%208.5c0%203.78-3.4%206.86-8.55%2011.54L12%2021.35z'/%3E%3C/svg%3E"); }
+  .check{ -webkit-mask-image:url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%3E%3Cpath%20d='M20.3%205.7a1.5%201.5%200%200%201%200%202.1l-9.5%209.5a1.5%201.5%200%200%201-2.1%200l-4.5-4.5a1.5%201.5%200%201%201%202.1-2.1l3.45%203.45%208.45-8.45a1.5%201.5%200%200%201%202.1%200z'/%3E%3C/svg%3E"); mask-image:url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%3E%3Cpath%20d='M20.3%205.7a1.5%201.5%200%200%201%200%202.1l-9.5%209.5a1.5%201.5%200%200%201-2.1%200l-4.5-4.5a1.5%201.5%200%201%201%202.1-2.1l3.45%203.45%208.45-8.45a1.5%201.5%200%200%201%202.1%200z'/%3E%3C/svg%3E"); }
+
+  /* ============ NAV ============ */
+  .nav{
+    position:sticky; top:0; z-index:60;
+    background:rgba(253,245,241,.82);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(110,79,184,.10);
+  }
+  .nav-inner{ display:flex; align-items:center; justify-content:space-between; height:74px; }
+  .brand{ display:flex; align-items:center; gap:11px; font-family:'Fredoka'; font-weight:600; font-size:1.22rem; color:var(--purple-deep); white-space:nowrap; }
+  .brand .badge{
+    width:40px; height:40px; border-radius:13px;
+    background:linear-gradient(140deg,var(--pink),var(--purple));
+    display:grid; place-items:center; box-shadow:var(--shadow-sm); flex:none;
+  }
+  .brand .badge .heart{ width:20px; height:20px; color:#fff; }
+  .nav-links{ display:flex; align-items:center; gap:34px; }
+  .nav-links a{ font-weight:700; font-size:.98rem; color:var(--ink-soft); transition:color .18s; }
+  .nav-links a:hover{ color:var(--pink); }
+  .btn{
+    font-family:'Fredoka'; font-weight:600; font-size:1rem;
+    border:none; cursor:pointer; display:inline-flex; align-items:center; gap:10px;
+    padding:13px 24px; border-radius:999px; transition:transform .18s, box-shadow .18s, background .18s;
+    white-space:nowrap;
+  }
+  .btn-wa{ background:#25D366; color:#fff; box-shadow:0 10px 24px rgba(37,211,102,.34); }
+  .btn-wa:hover{ transform:translateY(-2px); box-shadow:0 14px 30px rgba(37,211,102,.45); }
+  .btn-pink{ background:var(--pink); color:#fff; box-shadow:var(--shadow-pink); }
+  .btn-pink:hover{ transform:translateY(-2px); background:var(--pink-deep); }
+  .btn-ghost{ background:#fff; color:var(--purple-deep); box-shadow:var(--shadow-sm); }
+  .btn-ghost:hover{ transform:translateY(-2px); color:var(--pink); }
+  .wa-ico{ width:21px; height:21px; flex:none; display:inline-block; background-color:currentColor; -webkit-mask:url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Cpath%20d='M16%203C9%203%203.4%208.6%203.4%2015.6c0%202.4.7%204.7%201.9%206.7L3%2029l6.9-2.2c1.9%201%204%201.6%206.1%201.6%207%200%2012.6-5.6%2012.6-12.6S23%203%2016%203zm0%2022.8c-1.9%200-3.7-.5-5.3-1.5l-.4-.2-4.1%201.3%201.3-4-.2-.4c-1-1.6-1.6-3.5-1.6-5.5C5.4%209.8%2010.2%205%2016%205s10.6%204.8%2010.6%2010.6S21.8%2025.8%2016%2025.8zm5.8-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8%201-1%201.2-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.3-.2-.3%200-.5.1-.7.1-.1.3-.4.5-.6.1-.2.2-.3.3-.5.1-.2%200-.4%200-.6%200-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2%200-.5.1-.8.4-.3.3-1%201-1%202.5s1.1%202.9%201.2%203.1c.2.2%202.2%203.4%205.3%204.7.7.3%201.3.5%201.8.6.7.2%201.4.2%201.9.1.6-.1%201.9-.8%202.1-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z'/%3E%3C/svg%3E") center/contain no-repeat; mask:url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Cpath%20d='M16%203C9%203%203.4%208.6%203.4%2015.6c0%202.4.7%204.7%201.9%206.7L3%2029l6.9-2.2c1.9%201%204%201.6%206.1%201.6%207%200%2012.6-5.6%2012.6-12.6S23%203%2016%203zm0%2022.8c-1.9%200-3.7-.5-5.3-1.5l-.4-.2-4.1%201.3%201.3-4-.2-.4c-1-1.6-1.6-3.5-1.6-5.5C5.4%209.8%2010.2%205%2016%205s10.6%204.8%2010.6%2010.6S21.8%2025.8%2016%2025.8zm5.8-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8%201-1%201.2-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.3-.2-.3%200-.5.1-.7.1-.1.3-.4.5-.6.1-.2.2-.3.3-.5.1-.2%200-.4%200-.6%200-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2%200-.5.1-.8.4-.3.3-1%201-1%202.5s1.1%202.9%201.2%203.1c.2.2%202.2%203.4%205.3%204.7.7.3%201.3.5%201.8.6.7.2%201.4.2%201.9.1.6-.1%201.9-.8%202.1-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z'/%3E%3C/svg%3E") center/contain no-repeat; }
+  .nav-cta-wrap{ display:flex; align-items:center; gap:13px; }
+  .nav-social{ display:flex; align-items:center; gap:8px; }
+  .soc.nav-soc{ width:38px; height:38px; background:var(--purple-soft); color:var(--purple-deep); }
+  .soc.nav-soc:hover{ background:var(--purple-soft); transform:translateY(-2px); }
+  .soc.nav-soc.fb:hover{ background:#1877F2; color:#fff; }
+  .soc.nav-soc.tt:hover{ background:#111; color:#fff; }
+  .soc.nav-soc svg{ width:18px; height:18px; }
+  /* ============ HAMBURGER ============ */
+  .menu-btn{
+    display:none; background:var(--purple-soft); border:none; cursor:pointer;
+    width:40px; height:40px; border-radius:12px;
+    flex-direction:column; align-items:center; justify-content:center; gap:5px;
+    flex:none; transition:background .18s;
+  }
+  .menu-btn:hover{ background:var(--pink-soft); }
+  .menu-btn span{
+    display:block; width:18px; height:2px; border-radius:2px;
+    background:var(--purple-deep); transition:transform .25s, opacity .25s, background .18s;
+  }
+  .menu-btn:hover span{ background:var(--pink-deep); }
+  .nav-open .menu-btn span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
+  .nav-open .menu-btn span:nth-child(2){ opacity:0; transform:scaleX(0); }
+  .nav-open .menu-btn span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
+
+  /* ============ PRIVACY HERO ============ */
+  .priv-hero{ padding:64px 0 40px; overflow:hidden; text-align:center; }
+  .priv-hero::before{
+    content:""; position:absolute; top:-200px; left:50%; transform:translateX(-50%);
+    width:760px; height:520px; z-index:0;
+    background:radial-gradient(circle, rgba(230,220,247,.7), transparent 64%);
+  }
+  .priv-hero .wrap{ position:relative; z-index:2; }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:9px;
+    font-family:'Fredoka'; font-weight:600; letter-spacing:.16em; text-transform:uppercase;
+    color:var(--purple-deep); font-size:.9rem;
+    background:var(--pink-soft); padding:8px 18px 8px 14px; border-radius:999px;
+  }
+  .eyebrow .heart{ width:15px; height:15px; color:var(--pink); }
+  .priv-hero h1{
+    margin:22px 0 0; font-size:clamp(2.3rem,5.4vw,3.6rem); color:var(--purple-deep);
+  }
+  .priv-hero h1 .script{ display:block; color:var(--pink); font-size:1.16em; line-height:.9; margin-top:.04em; }
+  .priv-updated{
+    display:inline-flex; align-items:center; gap:9px; margin-top:22px;
+    background:var(--cream-card); color:var(--ink-soft); font-weight:700; font-size:.94rem;
+    padding:9px 18px; border-radius:999px; box-shadow:var(--shadow-sm);
+  }
+  .priv-updated .dot{ width:9px; height:9px; border-radius:50%; background:var(--teal); flex:none; }
+
+  /* ============ PRIVACY BODY ============ */
+  .priv-body{ padding:18px 0 80px; }
+  .priv-card{
+    max-width:860px; margin:0 auto;
+    background:var(--cream-card); border-radius:var(--r-lg);
+    box-shadow:var(--shadow-md); border:1.5px solid rgba(110,79,184,.07);
+    padding:20px 18px;
+  }
+  .priv-intro{
+    background:var(--pink-wash); border-radius:var(--r-md);
+    padding:26px 28px; display:flex; gap:18px; align-items:flex-start;
+  }
+  .priv-intro .ic{
+    width:52px; height:52px; border-radius:15px; flex:none; display:grid; place-items:center;
+    background:linear-gradient(140deg,var(--pink),var(--purple)); box-shadow:var(--shadow-sm);
+  }
+  .priv-intro .ic .heart{ width:26px; height:26px; color:#fff; }
+  .priv-intro p{ font-weight:600; color:var(--ink); font-size:1.04rem; }
+  .priv-intro strong{ color:var(--purple-deep); }
+
+  .priv-sections{ display:grid; gap:14px; margin-top:14px; }
+  .priv-sec{
+    border-radius:var(--r-md); padding:26px 28px;
+    border:1.5px solid rgba(110,79,184,.09);
+    transition:transform .18s, box-shadow .18s, border-color .18s;
+  }
+  .priv-sec:hover{ transform:translateY(-3px); box-shadow:var(--shadow-sm); border-color:rgba(110,79,184,.18); }
+  .priv-sec h2{
+    display:flex; align-items:center; gap:14px;
+    font-size:1.28rem; color:var(--purple-deep); margin-bottom:12px;
+  }
+  .priv-sec .num{
+    width:40px; height:40px; border-radius:13px; flex:none;
+    display:grid; place-items:center; font-family:'Fredoka'; font-weight:600; font-size:1.18rem; color:#fff;
+  }
+  .priv-sec.c1 .num{ background:var(--pink); }
+  .priv-sec.c2 .num{ background:var(--purple); }
+  .priv-sec.c3 .num{ background:var(--teal); }
+  .priv-sec.c4 .num{ background:var(--yellow); color:#7a5a00; }
+  .priv-sec p{ color:var(--ink-soft); font-weight:600; font-size:1.04rem; }
+  .priv-sec p + p{ margin-top:10px; }
+  .priv-sec strong{ color:var(--ink); }
+  .priv-sec .pill{
+    display:inline-block; background:var(--cream); color:var(--purple-deep);
+    font-weight:800; padding:2px 10px; border-radius:8px; font-size:.96em;
+  }
+  .priv-sec a{ color:var(--pink-deep); font-weight:700; border-bottom:1px solid var(--pink-soft); }
+  .priv-sec a:hover{ border-color:var(--pink-deep); }
+
+  .priv-closing{
+    margin-top:18px; text-align:center;
+    background:linear-gradient(135deg,var(--purple),var(--pink));
+    border-radius:var(--r-md); padding:34px 30px; color:#fff;
+    position:relative; overflow:hidden;
+  }
+  .priv-closing::before{ content:""; position:absolute; width:180px; height:180px; border-radius:50%; background:rgba(255,255,255,.1); top:-70px; right:-40px; }
+  .priv-closing h3{ font-size:1.4rem; position:relative; z-index:2; }
+  .priv-closing p{ margin:8px auto 22px; font-weight:600; opacity:.95; position:relative; z-index:2; max-width:480px; }
+  .priv-closing .btn{ position:relative; z-index:2; }
+
+  .priv-back{ text-align:center; margin-top:34px; }
+  .priv-back a{
+    display:inline-flex; align-items:center; gap:9px; font-family:'Fredoka'; font-weight:600;
+    color:var(--purple-deep); font-size:1rem;
+  }
+  .priv-back a:hover{ color:var(--pink); }
+  .priv-back .arrow{ font-size:1.2em; }
+
+  /* ============ FOOTER ============ */
+  footer{ background:var(--purple-deep); color:#fff; padding:46px 0 30px; }
+  .foot-grid{ display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap; }
+  .foot-grid .brand{ color:#fff; }
+  .foot-grid .brand .badge{ background:rgba(255,255,255,.16); }
+  .foot-links{ display:flex; gap:26px; font-weight:700; }
+  .foot-links a{ opacity:.82; transition:opacity .18s; }
+  .foot-links a:hover{ opacity:1; }
+  .foot-social{ display:flex; align-items:center; gap:11px; }
+  .foot-social .lbl{ font-weight:800; font-size:.78rem; letter-spacing:.13em; text-transform:uppercase; opacity:.66; margin-right:3px; }
+  .soc{ width:42px; height:42px; border-radius:50%; display:grid; place-items:center; color:#fff; background:rgba(255,255,255,.14); transition:transform .18s, background .18s, color .18s; }
+  .soc:hover{ transform:translateY(-3px); background:#fff; }
+  .soc.fb:hover{ color:#1877F2; }
+  .soc.tt:hover{ color:#111; }
+  .soc svg{ width:20px; height:20px; display:block; }
+  .foot-copy{ text-align:center; opacity:.6; font-size:.88rem; margin-top:28px; font-weight:600; }
+  .foot-mail{ display:inline-flex; align-items:center; gap:8px; font-weight:700; font-size:.96rem; opacity:.9; transition:opacity .18s; }
+  .foot-mail:hover{ opacity:1; }
+  .foot-mail .at{ width:34px; height:34px; border-radius:50%; background:rgba(255,255,255,.16); display:grid; place-items:center; flex:none; }
+  .foot-mail .at svg{ width:17px; height:17px; }
+
+  /* ============ FLOATING WA ============ */
+  .wa-float{
+    position:fixed; right:24px; bottom:24px; z-index:80;
+    display:flex; align-items:center; gap:12px;
+    background:#25D366; color:#fff; font-family:'Fredoka'; font-weight:600; font-size:1rem;
+    padding:14px 20px 14px 16px; border-radius:999px;
+    box-shadow:0 14px 34px rgba(37,211,102,.45); cursor:pointer;
+    transition:transform .2s, box-shadow .2s;
+  }
+  .wa-float:hover{ transform:translateY(-3px) scale(1.02); }
+  .wa-float .wa-ico{ width:28px; height:28px; }
+  .wa-float .lbl{ max-width:0; overflow:hidden; white-space:nowrap; transition:max-width .35s ease, margin .35s; margin-left:-12px; }
+  .wa-float:hover .lbl{ max-width:200px; margin-left:0; }
+  .wa-pulse{ position:absolute; inset:0; border-radius:999px; box-shadow:0 0 0 0 rgba(37,211,102,.5); animation:pulse 2.4s infinite; }
+  @keyframes pulse{ 0%{ box-shadow:0 0 0 0 rgba(37,211,102,.45);} 70%{ box-shadow:0 0 0 18px rgba(37,211,102,0);} 100%{ box-shadow:0 0 0 0 rgba(37,211,102,0);} }
+  /* floating social (mobile only) */
+  .float-social{ position:fixed; right:24px; bottom:88px; z-index:80; display:none; flex-direction:column; gap:12px; }
+  .float-social a{ width:52px; height:52px; border-radius:50%; display:grid; place-items:center; color:#fff; box-shadow:0 10px 26px rgba(0,0,0,.22); transition:transform .18s, box-shadow .18s; }
+  .float-social a:hover{ transform:translateY(-3px); box-shadow:0 14px 30px rgba(0,0,0,.3); }
+  .float-social a.fb{ background:#1877F2; }
+  .float-social a.tt{ background:#111; }
+  .float-social svg{ width:24px; height:24px; }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width:960px){
+    .menu-btn{ display:flex; }
+    .nav-links{
+      flex-direction:column; gap:0; align-items:stretch;
+      position:absolute; top:74px; left:0; right:0;
+      background:rgba(253,245,241,.97); backdrop-filter:blur(14px);
+      border-bottom:1px solid rgba(110,79,184,.12);
+      max-height:0; overflow:hidden;
+      transition:max-height .32s cubic-bezier(.4,0,.2,1);
+    }
+    .nav-open .nav-links{ max-height:280px; }
+    .nav-links > a{
+      padding:16px 28px; font-size:1.08rem;
+      border-bottom:1px solid rgba(110,79,184,.07);
+    }
+  }
+  @media (max-width:560px){
+    .wrap{ padding:0 18px; }
+    .nav-social{ display:none; }
+    .nav-cta-wrap > .btn-wa{ display:none; }
+    .brand{ font-size:1.06rem; gap:9px; }
+    .brand .badge{ width:34px; height:34px; border-radius:11px; }
+    .brand .badge .heart{ width:17px; height:17px; }
+    .priv-card{ padding:14px 12px; }
+    .priv-intro{ padding:22px 20px; }
+    .priv-sec{ padding:22px 20px; }
+    .foot-social{ display:none; }
+    .float-social{ display:flex; }
+    .wa-float{ width:52px; height:52px; padding:0; gap:0; justify-content:center; bottom:24px; right:24px; box-shadow:0 10px 26px rgba(0,0,0,.22); }
+    .wa-float .wa-ico{ width:26px; height:26px; margin:0; }
+    .wa-float .lbl{ display:none; }
+    .wa-float .wa-pulse{ display:none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="index.html" class="brand">
+      <span class="badge"><span class="heart"></span></span>
+      Aprendiendo Juntos
+    </a>
+    <nav class="nav-links" id="nav-menu" aria-label="Menú principal">
+      <a href="index.html#ofrecemos">Servicios</a>
+      <a href="index.html#tarifas">Tarifas</a>
+      <a href="index.html#beneficios">Beneficios</a>
+      <a href="index.html#contacto">Contacto</a>
+    </nav>
+    <div class="nav-cta-wrap">
+      <div class="nav-social">
+        <a class="soc nav-soc fb" href="https://www.facebook.com/share/1EigzRYmUD/" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.3-1.5 1.6-1.5h1.7V3.6c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.5-4 4.1v2.3H7.6V13h2.5v8z"/></svg>
+        </a>
+        <a class="soc nav-soc tt" href="https://www.tiktok.com/@aprendiendojuntostaller" target="_blank" rel="noopener" aria-label="TikTok">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.5 3c.3 2 1.4 3.4 3.5 3.6v2.4c-1.2.1-2.3-.3-3.5-1v5.7c0 3.4-2.6 5.6-5.7 4.9-3.4-.8-4.5-4.8-2-7.2.9-.9 2.1-1.3 3.4-1.1v2.5c-.4-.1-.8-.1-1.2 0-1 .3-1.6 1-1.5 2 .1 1.4 1.6 2.2 2.9 1.5.8-.4 1.1-1.2 1.1-2.1V3z"/></svg>
+        </a>
+      </div>
+      <a class="btn btn-wa" href="https://wa.me/573170171728?text=Hola,%20quiero%20información%20sobre%20el%20refuerzo%20escolar" target="_blank" rel="noopener"><span class="wa-ico" aria-hidden="true"></span> Escríbeme</a>
+      <button class="menu-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- PRIVACY HERO -->
+<section class="priv-hero">
+  <div class="wrap">
+    <span class="eyebrow"><span class="heart" aria-hidden="true"></span> Tu confianza nos importa</span>
+    <h1>Política de <span class="script">Privacidad</span></h1>
+    <div class="priv-updated"><span class="dot" aria-hidden="true"></span> Última actualización: 19 de junio de 2026</div>
+  </div>
+</section>
+
+<!-- PRIVACY BODY -->
+<section class="priv-body">
+  <div class="wrap">
+    <div class="priv-card">
+
+      <div class="priv-intro">
+        <div class="ic" aria-hidden="true"><span class="heart"></span></div>
+        <p>En <strong>"Aprendiendo Juntos"</strong> valoramos y respetamos tu privacidad y la de tu familia. Esta política explica de forma clara qué información recopilamos a través de nuestro canal de WhatsApp y cómo la cuidamos.</p>
+      </div>
+
+      <div class="priv-sections">
+
+        <div class="priv-sec c1">
+          <h2><span class="num">1</span> Recopilación de información</h2>
+          <p>A través de nuestro canal de WhatsApp, únicamente recopilamos la información mínima necesaria para brindarte atención: tu <strong>número de teléfono</strong> y el <strong>nombre de perfil público</strong> asociado a tu cuenta de WhatsApp.</p>
+        </div>
+
+        <div class="priv-sec c2">
+          <h2><span class="num">2</span> Uso de la información</h2>
+          <p>Utilizamos estos datos exclusivamente para responder a tus solicitudes de información sobre nuestros talleres, gestionar inscripciones y enviar notificaciones relevantes.</p>
+          <p>No compartimos, vendemos ni alquilamos tu información personal a terceros.</p>
+        </div>
+
+        <div class="priv-sec c3">
+          <h2><span class="num">3</span> Seguridad de los datos</h2>
+          <p>Las comunicaciones realizadas a través de nuestra línea de WhatsApp están protegidas por el <strong>cifrado de extremo a extremo</strong> de la plataforma, y se gestionan bajo los protocolos de seguridad de la API oficial de Meta y Google Cloud Platform.</p>
+        </div>
+
+        <div class="priv-sec c4">
+          <h2><span class="num">4</span> Derechos del usuario</h2>
+          <p>Tienes derecho a solicitar la eliminación de tu información de nuestras bases de datos en cualquier momento. Para ejercer este derecho o dejar de recibir mensajes, escríbenos la palabra <span class="pill">Detener</span> en el mismo chat, o envíanos un correo a <a href="/cdn-cgi/l/email-protection#f2938280979c969b979c969d98879c869d8186939e9e9780869380979381b2959f939b9edc919d9f"><span class="__cf_email__" data-cfemail="d2b3a2a0b7bcb6bbb7bcb6bdb8a7bca6bda1a6b3bebeb7a0a6b3a0b7b3a192b5bfb3bbbefcb1bdbf">[email&#160;protected]</span></a>.</p>
+        </div>
+
+      </div>
+
+      <div class="priv-closing">
+        <h3>¿Tienes alguna pregunta?</h3>
+        <p>Estamos para ayudarte. Escríbenos y con gusto resolvemos cualquier duda sobre tu privacidad o nuestros talleres.</p>
+        <a class="btn btn-wa" href="https://wa.me/573170171728?text=Hola,%20tengo%20una%20pregunta%20sobre%20la%20política%20de%20privacidad" target="_blank" rel="noopener"><span class="wa-ico" aria-hidden="true"></span> Escríbenos por WhatsApp</a>
+      </div>
+
+    </div>
+
+    <div class="priv-back">
+      <a href="index.html"><span class="arrow" aria-hidden="true">←</span> Volver al inicio</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <a href="index.html" class="brand">
+        <span class="badge"><span class="heart" style="width:20px;height:20px" aria-hidden="true"></span></span>
+        Aprendiendo Juntos
+      </a>
+      <nav class="foot-links" aria-label="Menú pie de página">
+        <a href="index.html#ofrecemos">Servicios</a>
+        <a href="index.html#tarifas">Tarifas</a>
+        <a href="index.html#beneficios">Beneficios</a>
+        <a href="index.html#contacto">Contacto</a>
+      </nav>
+      <div class="foot-social">
+        <span class="lbl">Síguenos</span>
+        <a class="soc fb" href="https://www.facebook.com/share/1EigzRYmUD/" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.3-1.5 1.6-1.5h1.7V3.6c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.5-4 4.1v2.3H7.6V13h2.5v8z"/></svg>
+        </a>
+        <a class="soc tt" href="https://www.tiktok.com/@aprendiendojuntostaller" target="_blank" rel="noopener" aria-label="TikTok">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.5 3c.3 2 1.4 3.4 3.5 3.6v2.4c-1.2.1-2.3-.3-3.5-1v5.7c0 3.4-2.6 5.6-5.7 4.9-3.4-.8-4.5-4.8-2-7.2.9-.9 2.1-1.3 3.4-1.1v2.5c-.4-.1-.8-.1-1.2 0-1 .3-1.6 1-1.5 2 .1 1.4 1.6 2.2 2.9 1.5.8-.4 1.1-1.2 1.1-2.1V3z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:30px;">
+      <a class="foot-mail" href="/cdn-cgi/l/email-protection#a4c5d4d6c1cac0cdc1cac0cbced1cad0cbd7d0c5c8c8c1d6d0c5d6c1c5d7e4c3c9c5cdc88ac7cbc9">
+        <span class="at"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M4 7l8 6 8-6"></path></svg></span>
+        <span class="__cf_email__" data-cfemail="d1b0a1a3b4bfb5b8b4bfb5bebba4bfa5bea2a5b0bdbdb4a3a5b0a3b4b0a291b6bcb0b8bdffb2bebc">[email&#160;protected]</span>
+      </a>
+    </div>
+    <div class="foot-copy">Refuerzo y Nivelación Escolar · Hecho con <span style="color:var(--pink-soft)" aria-hidden="true">♥</span> para acompañar a cada estudiante</div>
+  </div>
+</footer>
+
+<!-- FLOATING WA -->
+<a class="wa-float" href="https://wa.me/573170171728?text=Hola,%20quiero%20información%20sobre%20el%20refuerzo%20escolar" target="_blank" rel="noopener" aria-label="Escríbeme por WhatsApp">
+  <span class="wa-pulse" aria-hidden="true"></span>
+  <span class="wa-ico" aria-hidden="true"></span>
+  <span class="lbl">Escríbeme por WhatsApp</span>
+</a>
+
+<!-- FLOATING SOCIAL (mobile) -->
+<div class="float-social" aria-label="Redes sociales">
+  <a class="fb" href="https://www.facebook.com/share/1EigzRYmUD/" target="_blank" rel="noopener" aria-label="Facebook">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.3-1.5 1.6-1.5h1.7V3.6c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.5-4 4.1v2.3H7.6V13h2.5v8z"/></svg>
+  </a>
+  <a class="tt" href="https://www.tiktok.com/@aprendiendojuntostaller" target="_blank" rel="noopener" aria-label="TikTok">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.5 3c.3 2 1.4 3.4 3.5 3.6v2.4c-1.2.1-2.3-.3-3.5-1v5.7c0 3.4-2.6 5.6-5.7 4.9-3.4-.8-4.5-4.8-2-7.2.9-.9 2.1-1.3 3.4-1.1v2.5c-.4-.1-.8-.1-1.2 0-1 .3-1.6 1-1.5 2 .1 1.4 1.6 2.2 2.9 1.5.8-.4 1.1-1.2 1.1-2.1V3z"/></svg>
+  </a>
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  (function(){
+    var nav   = document.querySelector('.nav');
+    var btn   = document.querySelector('.menu-btn');
+    var links = document.querySelectorAll('#nav-menu a');
+    function close(){ nav.classList.remove('nav-open'); btn.setAttribute('aria-expanded','false'); }
+    function toggle(){ var open = nav.classList.toggle('nav-open'); btn.setAttribute('aria-expanded', open ? 'true' : 'false'); }
+    btn.addEventListener('click', function(e){ e.stopPropagation(); toggle(); });
+    links.forEach(function(a){ a.addEventListener('click', close); });
+    document.addEventListener('click', function(e){ if(nav.classList.contains('nav-open') && !nav.contains(e.target)) close(); });
+    document.addEventListener('keydown', function(e){ if(e.key === 'Escape') close(); });
+  })();
+</script>
+</body>
+</html>
